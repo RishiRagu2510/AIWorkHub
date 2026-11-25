@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\IdentityTenant.Application\IdentityTenant.Application.csproj" />
+    <ProjectReference Include="..\IdentityTenant.Domain\IdentityTenant.Domain.csproj" />
+    <ProjectReference Include="..\IdentityTenant.Contracts\IdentityTenant.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="../Database/postgres/*.sql" LogicalName="IdentityTenant.Sql.%(Filename)%(Extension)" />
+  </ItemGroup>
+  <PropertyGroup>
+  </PropertyGroup>
+
+</Project>

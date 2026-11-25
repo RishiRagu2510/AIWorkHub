@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  
+
+
+
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\AIAgent.Application\AIAgent.Application.csproj" />
+    <ProjectReference Include="..\..\AIAgent.Contracts\AIAgent.Contracts.csproj" />
+    <ProjectReference Include="..\..\AIAgent.Domain\AIAgent.Domain.csproj" />
+    <ProjectReference Include="..\..\AIAgent.Infrastructure\AIAgent.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="cases.json" CopyToOutputDirectory="PreserveNewest" />
+    
+    <None Include="..\..\AIAgent.Api\appsettings.json" Link="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\AIAgent.Api\appsettings.Secrets.json" Link="appsettings.Secrets.json" CopyToOutputDirectory="PreserveNewest" Condition="Exists('..\..\src\AIAgent.Api\appsettings.Secrets.json')" />
+  </ItemGroup>
+
+</Project>

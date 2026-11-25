@@ -6,15 +6,19 @@ WORKDIR /src
 
 # Copy solution and backend source code
 COPY AIWorkHub.sln .
-COPY backend/ backend/
+COPY Services/ Services/
+COPY Gateway/ Gateway/
+COPY Shared/ Shared/
+COPY Tests/ Tests/
+COPY Directory.Build.props Directory.Packages.props global.json ./
 
 # Publish all required microservices
-RUN dotnet publish backend/gateway/ApiGateway/ApiGateway.csproj -c Release -o /app/gateway
-RUN dotnet publish backend/services/IdentityTenant/IdentityTenant.Api/IdentityTenant.Api.csproj -c Release -o /app/identity
-RUN dotnet publish backend/services/Jira/Jira.Api/Jira.Api.csproj -c Release -o /app/jira
-RUN dotnet publish backend/services/Persona/Persona.Api/Persona.Api.csproj -c Release -o /app/persona
-RUN dotnet publish backend/services/Audit/Audit.Api/Audit.Api.csproj -c Release -o /app/audit
-RUN dotnet publish backend/services/AIAgent/AIAgent.Api/AIAgent.Api.csproj -c Release -o /app/aiagent
+RUN dotnet publish Gateway/ApiGateway/ApiGateway.csproj -c Release -o /app/gateway
+RUN dotnet publish Services/IdentityTenant/IdentityTenant.Api/IdentityTenant.Api.csproj -c Release -o /app/identity
+RUN dotnet publish Services/Jira/Jira.Api/Jira.Api.csproj -c Release -o /app/jira
+RUN dotnet publish Services/Persona/Persona.Api/Persona.Api.csproj -c Release -o /app/persona
+RUN dotnet publish Services/Audit/Audit.Api/Audit.Api.csproj -c Release -o /app/audit
+RUN dotnet publish Services/AIAgent/AIAgent.Api/AIAgent.Api.csproj -c Release -o /app/aiagent
 
 # ==========================================
 # Runtime Stage
@@ -26,7 +30,7 @@ WORKDIR /app
 COPY --from=build /app /app
 
 # Copy entrypoint script
-COPY start.sh /app/start.sh
+COPY Scripts/development/start.sh /app/start.sh
 RUN chmod +x /app/start.sh
 
 # Render and cloud platforms expose PORT environment variable

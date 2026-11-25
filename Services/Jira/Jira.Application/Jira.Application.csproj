@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jira.Domain\Jira.Domain.csproj" />
+    <ProjectReference Include="..\Jira.Contracts\Jira.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\Shared\Messaging\Contracts\Messaging.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" />
+  </ItemGroup>
+
+  <PropertyGroup>
+  </PropertyGroup>
+
+</Project>

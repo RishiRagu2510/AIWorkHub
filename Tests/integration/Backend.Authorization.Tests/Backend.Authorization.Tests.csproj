@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../../../Services/Jira/Database/postgres/020_accounts.sql" Link="020_accounts.sql" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../../Services/Jira/Database/postgres/011_project_hierarchy.sql" Link="011_project_hierarchy.sql" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../../Services/Jira/Database/postgres/014_notifications.sql" Link="014_notifications.sql" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../../Services/IdentityTenant/Database/postgres/009_employees.sql" Link="009_employees.sql" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../../Services/IdentityTenant/Database/postgres/013_employee_career_history.sql" Link="013_employee_career_history.sql" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../../Services/IdentityTenant/Database/postgres/016_leave_wfh.sql" Link="016_leave_wfh.sql" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../../Services/Jira/Database/postgres/025_allocations.sql" Link="025_allocations.sql" CopyToOutputDirectory="PreserveNewest" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="Testcontainers.PostgreSql" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+    <Using Include="Xunit" />
+    <ProjectReference Include="../../../Services/Jira/Jira.Api/Jira.Api.csproj" />
+    <ProjectReference Include="../../../Services/IdentityTenant/IdentityTenant.Api/IdentityTenant.Api.csproj" />
+    <ProjectReference Include="../../../Services/Persona/Persona.Api/Persona.Api.csproj" />
+    <ProjectReference Include="../../../Services/Audit/Audit.Api/Audit.Api.csproj" />
+    <ProjectReference Include="../../../Services/AIAgent/AIAgent.Infrastructure/AIAgent.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

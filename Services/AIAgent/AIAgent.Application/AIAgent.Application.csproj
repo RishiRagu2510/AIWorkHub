@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\AIAgent.Domain\AIAgent.Domain.csproj" />
+    <ProjectReference Include="..\AIAgent.Contracts\AIAgent.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\Shared\TenantContext\TenantContext.csproj" />
+    <ProjectReference Include="..\..\..\Shared\Authorization\Authorization.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <PropertyGroup>
+  </PropertyGroup>
+
+</Project>

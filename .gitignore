@@ -1,32 +1,124 @@
-bin/
-obj/
-/packages/
-riderModule.iml
-/_ReSharper.Caches/
-# Local secrets (model API keys)
+# ==========================================
+# .NET / C# Build Artifacts
+# ==========================================
+[Bb]in/
+[Oo]bj/
+**/bin/
+**/obj/
+packages/
+**/packages/
+.nuget/
+**/.nuget/
+*.user
+*.userosv
+*.suo
+*.userprefs
+*.pidb
+*.booproj
+*.svclog
+TestResults/
+**/TestResults/
+
+# ==========================================
+# Secrets, Credentials & Local Config
+# ==========================================
+# Ignore all .env files by default
+*.env
+*.env.*
+.env
+.env.*
+**/.env
+**/.env.*
+# But track example templates so new developers know what variables are needed
+!.env.example
+!**/.env.example
+!appsettings.Secrets.example.json
+!**/appsettings.Secrets.example.json
+
+# Local appsettings secrets
 appsettings.Secrets.json
 **/appsettings.Secrets.json
+appsettings.*.local.json
+**/appsettings.*.local.json
 
-# Runtime logs (can contain request URLs)
-logs/
+# Certificates, Keys & Credentials
+*.key
+*.crt
+*.pem
+*.pfx
+*.cer
+*.der
+.certs/
+**/.certs/
+secrets/
+**/secrets/
 
-# IDE and user folders
-.idea/
-.local/
-.nuget/
-Library/
-.gemini/
-.agents/
-
-# Frontend & system artifacts
+# ==========================================
+# Node / Frontend Artifacts
+# ==========================================
 node_modules/
 **/node_modules/
-.DS_Store
-**/.DS_Store
 dist/
 **/dist/
-.pw-qa/
+.npm/
+.yarn/
+*.tsbuildinfo
+
+# ==========================================
+# Testing & QA Artifacts
+# ==========================================
+coverage/
+**/coverage/
 playwright-report/
 **/playwright-report/
 test-results/
 **/test-results/
+.pw-qa/
+**/blob-report/
+test-plans/
+agents/
+
+# ==========================================
+# Logs & Temporary Files
+# ==========================================
+logs/
+**/logs/
+*.log
+artifacts/
+**/artifacts/
+
+# ==========================================
+# Python / Script Artifacts
+# ==========================================
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# ==========================================
+# IDEs & System Files
+# ==========================================
+.DS_Store
+**/.DS_Store
+Thumbs.db
+ehthumbs.db
+.idea/
+**/.idea/
+.vscode/
+**/.vscode/
+*.swp
+*.swo
+*~
+riderModule.iml
+/_ReSharper.Caches/
+.local/
+**/.local/
+Library/
+**/Library/
+.gemini/
+**/.gemini/
+.agents/
+**/.agents/

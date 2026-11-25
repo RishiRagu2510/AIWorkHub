@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Persona.Domain\Persona.Domain.csproj" />
+    <ProjectReference Include="..\Persona.Contracts\Persona.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\Shared\Authorization\Authorization.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" />
+  </ItemGroup>
+
+  <PropertyGroup>
+  </PropertyGroup>
+
+</Project>

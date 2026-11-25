@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\AIAgent.Domain\AIAgent.Domain.csproj" />
+    <ProjectReference Include="..\AIAgent.Application\AIAgent.Application.csproj" />
+    <ProjectReference Include="..\AIAgent.Contracts\AIAgent.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\Shared\Logging\Logging.csproj" />
+    <ProjectReference Include="..\..\..\Shared\Authentication\Authentication.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Http" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" />
+    <PackageReference Include="Minio" />
+    <PackageReference Include="MongoDB.Driver" />
+    <PackageReference Include="Npgsql" />
+    <PackageReference Include="PdfPig" />
+  </ItemGroup>
+
+  <PropertyGroup>
+  </PropertyGroup>
+
+</Project>
