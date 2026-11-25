@@ -122,3 +122,6 @@ Library/
 **/.gemini/
 .agents/
 **/.agents/
+
+# Frontend is maintained outside this repository
+/frontend/
