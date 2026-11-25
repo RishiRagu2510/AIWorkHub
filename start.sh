@@ -3,6 +3,8 @@ set -e
 
 mkdir -p /tmp/keys
 
+export Kafka__BootstrapServers="${Kafka__BootstrapServers:-disabled}"
+
 GATEWAY_PORT="${PORT:-5204}"
 
 echo "Starting AIWorkHub microservices..."

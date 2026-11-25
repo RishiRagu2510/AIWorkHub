@@ -21,8 +21,16 @@ public abstract class ReliableAuditConsumer(IOptions<KafkaOptions> options, ILog
     public static TimeSpan RetryDelay(int attempt) => TimeSpan.FromSeconds(Math.Min(16, Math.Pow(2, Math.Clamp(attempt - 1, 0, 4))));
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        
         await Task.Yield();
+        var bootstrap = options.Value?.BootstrapServers;
+        if (string.IsNullOrWhiteSpace(bootstrap) ||
+            bootstrap.Equals("disabled", StringComparison.OrdinalIgnoreCase) ||
+            bootstrap.Equals("none", StringComparison.OrdinalIgnoreCase))
+        {
+            logger.LogInformation("Kafka is disabled. Skipping consumer for {Group}.", Group);
+            return;
+        }
+
         using var consumer = new ConsumerBuilder<Ignore,string>(new ConsumerConfig {
             BootstrapServers=options.Value.BootstrapServers, GroupId=Group, EnableAutoCommit=false,
             EnableAutoOffsetStore=false, AutoOffsetReset=AutoOffsetReset.Earliest, MaxPollIntervalMs=600000 }).Build();
