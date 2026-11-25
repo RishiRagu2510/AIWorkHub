@@ -3,19 +3,7 @@ set -e
 
 mkdir -p /tmp/keys
 
-# Disable Kafka if not explicitly configured
 export Kafka__BootstrapServers="${Kafka__BootstrapServers:-disabled}"
-
-# If DATABASE_URL or SUPABASE_DB_URL is provided, map to each service's connection string
-DB_CONN="${DATABASE_URL:-$SUPABASE_DB_URL}"
-if [ -n "$DB_CONN" ]; then
-  echo "Configuring PostgreSQL connection strings from environment..."
-  export ConnectionStrings__IdentityTenant="${ConnectionStrings__IdentityTenant:-$DB_CONN}"
-  export ConnectionStrings__Jira="${ConnectionStrings__Jira:-$DB_CONN}"
-  export ConnectionStrings__Audit="${ConnectionStrings__Audit:-$DB_CONN}"
-  export ConnectionStrings__Persona="${ConnectionStrings__Persona:-$DB_CONN}"
-  export KnowledgeBase__ConnectionString="${KnowledgeBase__ConnectionString:-$DB_CONN}"
-fi
 
 GATEWAY_PORT="${PORT:-5204}"
 
