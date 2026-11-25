@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+mkdir -p /tmp/keys
+
 GATEWAY_PORT="${PORT:-5204}"
 
 echo "Starting AIWorkHub microservices..."
