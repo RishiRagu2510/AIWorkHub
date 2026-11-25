@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="gh-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="gh-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+    <filter id="gh-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#gh-bg)"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1"/>
+  <g filter="url(#gh-shadow)">
+    <rect x="16" y="16" width="13" height="13" rx="3.5" fill="#FFFFFF" fill-opacity="0.95"/>
+    <rect x="35" y="16" width="13" height="13" rx="3.5" fill="url(#gh-glow)"/>
+    <rect x="16" y="35" width="13" height="13" rx="3.5" fill="url(#gh-glow)"/>
+    <rect x="35" y="35" width="13" height="13" rx="3.5" fill="#FFFFFF" fill-opacity="0.95"/>
+    <circle cx="32" cy="32" r="4.5" fill="#FFFFFF"/>
+    <circle cx="32" cy="32" r="2.5" fill="#4F46E5"/>
+    <path d="M22.5 29v6M41.5 29v6M29 22.5h6M29 41.5h6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-opacity="0.8"/>
+  </g>
+</svg>

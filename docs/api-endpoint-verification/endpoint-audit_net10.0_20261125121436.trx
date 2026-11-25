@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="7da38eef-ff20-455a-92af-3ebc6397d066" name="@C18985 2026-11-25 12:14:34" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-25T12:14:34.4676340+05:30" queuing="2026-11-25T12:14:34.4676340+05:30" start="2026-11-25T12:14:32.7511530+05:30" finish="2026-11-25T12:14:36.0717740+05:30" />
+  <TestSettings name="default" id="3908a97a-72f1-4909-87cc-8fce56f80ea2">
+    <Deployment runDeploymentRoot="_C18985_2026-11-25_12_14_34" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="7bd8ec96-a34a-456f-b1b5-0f638fe0d0b1" testId="65c02d4c-159a-9385-035e-43e3239742dc" testName="Audit.Infrastructure.Tests.AuditLogRepositoryQueryTests.SearchAsync_AppliesEntityAndActionFilters" computerName="C18985" duration="00:00:00.0207941" startTime="2026-11-25T12:14:33.2912210+05:30" endTime="2026-11-25T12:14:33.3081280+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7bd8ec96-a34a-456f-b1b5-0f638fe0d0b1" />
+    <UnitTestResult executionId="14be126a-91a6-4b2f-8f13-972f27edce14" testId="8ff48498-8b33-fe2f-e914-acf1d7161f5c" testName="Audit.Infrastructure.Tests.AuditLogRepositoryQueryTests.SearchAsync_AppliesPagination" computerName="C18985" duration="00:00:00.0107978" startTime="2026-11-25T12:14:33.3085680+05:30" endTime="2026-11-25T12:14:33.3189390+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="14be126a-91a6-4b2f-8f13-972f27edce14" />
+    <UnitTestResult executionId="40f1882d-1cad-4bb7-80c2-e2d79d5ee4c7" testId="57dcd2b2-dc00-7fd0-a418-f38bdb5dc396" testName="Audit.Infrastructure.Tests.AuditLogRepositoryPostgreSqlTests.SearchAsync_WorksAgainstRealPostgreSql" computerName="C18985" duration="00:00:03.0244490" startTime="2026-11-25T12:14:33.0160830+05:30" endTime="2026-11-25T12:14:36.0426950+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="40f1882d-1cad-4bb7-80c2-e2d79d5ee4c7" />
+    <UnitTestResult executionId="bf2ef883-5d0f-4646-83b9-f9b31108658e" testId="030b85ec-091e-d53f-ef6d-2843afacb2c2" testName="Audit.Infrastructure.Tests.AuditLogRepositoryQueryTests.SearchAsync_ReturnsNewestRecordsFirst" computerName="C18985" duration="00:00:00.0006773" startTime="2026-11-25T12:14:33.3205810+05:30" endTime="2026-11-25T12:14:33.3211670+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bf2ef883-5d0f-4646-83b9-f9b31108658e" />
+    <UnitTestResult executionId="4e60329b-b05e-4aaa-bd77-c0e5532a1b23" testId="a375a9c9-e534-b01f-ee57-81a66dae2602" testName="Audit.Infrastructure.Tests.AuditLogRepositoryQueryTests.SearchAsync_ClampsInvalidPaginationValues" computerName="C18985" duration="00:00:00.2685428" startTime="2026-11-25T12:14:33.0166400+05:30" endTime="2026-11-25T12:14:33.2872030+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4e60329b-b05e-4aaa-bd77-c0e5532a1b23" />
+    <UnitTestResult executionId="1e200eab-89a7-4c00-ba7d-85db77167f01" testId="18e647a3-9101-d8dd-971d-1e6af93570d1" testName="Audit.Infrastructure.Tests.AuditLogRepositoryQueryTests.SearchAsync_IsScopedToTenant" computerName="C18985" duration="00:00:00.0015138" startTime="2026-11-25T12:14:33.3190440+05:30" endTime="2026-11-25T12:14:33.3204910+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1e200eab-89a7-4c00-ba7d-85db77167f01" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Audit.Infrastructure.Tests.AuditLogRepositoryQueryTests.SearchAsync_ClampsInvalidPaginationValues" storage="/users/rragupathi/desktop/aiworkhub/backend/services/audit/tests/audit.infrastructure.tests/bin/debug/net10.0/audit.infrastructure.tests.dll" id="a375a9c9-e534-b01f-ee57-81a66dae2602">
+      <Execution id="4e60329b-b05e-4aaa-bd77-c0e5532a1b23" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Audit/tests/Audit.Infrastructure.Tests/bin/Debug/net10.0/Audit.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Audit.Infrastructure.Tests.AuditLogRepositoryQueryTests" name="SearchAsync_ClampsInvalidPaginationValues" />
+    </UnitTest>
+    <UnitTest name="Audit.Infrastructure.Tests.AuditLogRepositoryPostgreSqlTests.SearchAsync_WorksAgainstRealPostgreSql" storage="/users/rragupathi/desktop/aiworkhub/backend/services/audit/tests/audit.infrastructure.tests/bin/debug/net10.0/audit.infrastructure.tests.dll" id="57dcd2b2-dc00-7fd0-a418-f38bdb5dc396">
+      <Execution id="40f1882d-1cad-4bb7-80c2-e2d79d5ee4c7" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Audit/tests/Audit.Infrastructure.Tests/bin/Debug/net10.0/Audit.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Audit.Infrastructure.Tests.AuditLogRepositoryPostgreSqlTests" name="SearchAsync_WorksAgainstRealPostgreSql" />
+    </UnitTest>
+    <UnitTest name="Audit.Infrastructure.Tests.AuditLogRepositoryQueryTests.SearchAsync_ReturnsNewestRecordsFirst" storage="/users/rragupathi/desktop/aiworkhub/backend/services/audit/tests/audit.infrastructure.tests/bin/debug/net10.0/audit.infrastructure.tests.dll" id="030b85ec-091e-d53f-ef6d-2843afacb2c2">
+      <Execution id="bf2ef883-5d0f-4646-83b9-f9b31108658e" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Audit/tests/Audit.Infrastructure.Tests/bin/Debug/net10.0/Audit.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Audit.Infrastructure.Tests.AuditLogRepositoryQueryTests" name="SearchAsync_ReturnsNewestRecordsFirst" />
+    </UnitTest>
+    <UnitTest name="Audit.Infrastructure.Tests.AuditLogRepositoryQueryTests.SearchAsync_AppliesPagination" storage="/users/rragupathi/desktop/aiworkhub/backend/services/audit/tests/audit.infrastructure.tests/bin/debug/net10.0/audit.infrastructure.tests.dll" id="8ff48498-8b33-fe2f-e914-acf1d7161f5c">
+      <Execution id="14be126a-91a6-4b2f-8f13-972f27edce14" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Audit/tests/Audit.Infrastructure.Tests/bin/Debug/net10.0/Audit.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Audit.Infrastructure.Tests.AuditLogRepositoryQueryTests" name="SearchAsync_AppliesPagination" />
+    </UnitTest>
+    <UnitTest name="Audit.Infrastructure.Tests.AuditLogRepositoryQueryTests.SearchAsync_IsScopedToTenant" storage="/users/rragupathi/desktop/aiworkhub/backend/services/audit/tests/audit.infrastructure.tests/bin/debug/net10.0/audit.infrastructure.tests.dll" id="18e647a3-9101-d8dd-971d-1e6af93570d1">
+      <Execution id="1e200eab-89a7-4c00-ba7d-85db77167f01" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Audit/tests/Audit.Infrastructure.Tests/bin/Debug/net10.0/Audit.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Audit.Infrastructure.Tests.AuditLogRepositoryQueryTests" name="SearchAsync_IsScopedToTenant" />
+    </UnitTest>
+    <UnitTest name="Audit.Infrastructure.Tests.AuditLogRepositoryQueryTests.SearchAsync_AppliesEntityAndActionFilters" storage="/users/rragupathi/desktop/aiworkhub/backend/services/audit/tests/audit.infrastructure.tests/bin/debug/net10.0/audit.infrastructure.tests.dll" id="65c02d4c-159a-9385-035e-43e3239742dc">
+      <Execution id="7bd8ec96-a34a-456f-b1b5-0f638fe0d0b1" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Audit/tests/Audit.Infrastructure.Tests/bin/Debug/net10.0/Audit.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Audit.Infrastructure.Tests.AuditLogRepositoryQueryTests" name="SearchAsync_AppliesEntityAndActionFilters" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="65c02d4c-159a-9385-035e-43e3239742dc" executionId="7bd8ec96-a34a-456f-b1b5-0f638fe0d0b1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8ff48498-8b33-fe2f-e914-acf1d7161f5c" executionId="14be126a-91a6-4b2f-8f13-972f27edce14" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="57dcd2b2-dc00-7fd0-a418-f38bdb5dc396" executionId="40f1882d-1cad-4bb7-80c2-e2d79d5ee4c7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="030b85ec-091e-d53f-ef6d-2843afacb2c2" executionId="bf2ef883-5d0f-4646-83b9-f9b31108658e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a375a9c9-e534-b01f-ee57-81a66dae2602" executionId="4e60329b-b05e-4aaa-bd77-c0e5532a1b23" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="18e647a3-9101-d8dd-971d-1e6af93570d1" executionId="1e200eab-89a7-4c00-ba7d-85db77167f01" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="6" executed="6" passed="6" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.11)
+[xUnit.net 00:00:00.03]   Discovering: Audit.Infrastructure.Tests
+[xUnit.net 00:00:00.04]   Discovered:  Audit.Infrastructure.Tests
+[xUnit.net 00:00:00.05]   Starting:    Audit.Infrastructure.Tests
+[testcontainers.org 00:00:00.06] Connected to Docker:
+  Host: unix:///var/run/docker.sock
+  Server Version: 29.9.3
+  Kernel Version: 7.0.14-linuxkit
+  API Version: 1.56
+  Operating System: Docker Desktop
+  Total Memory: 7.75 GB
+  Labels: 
+    com.docker.desktop.address=unix:///Users/rragupathi/Library/Containers/com.docker.docker/Data/docker-cli.sock
+[testcontainers.org 00:00:00.16] Docker container 454ef7b93bf0 created
+[testcontainers.org 00:00:00.18] Start Docker container 454ef7b93bf0
+[testcontainers.org 00:00:00.25] Wait for Docker container 454ef7b93bf0 to complete readiness checks
+[testcontainers.org 00:00:01.28] Docker container 454ef7b93bf0 ready
+[testcontainers.org 00:00:01.34] Docker container e3326fa2ee1a created
+[testcontainers.org 00:00:01.34] Start Docker container e3326fa2ee1a
+[testcontainers.org 00:00:01.40] Wait for Docker container e3326fa2ee1a to complete readiness checks
+[testcontainers.org 00:00:01.41] Execute "pg_isready --host localhost --dbname audit_test --username postgres" at Docker container e3326fa2ee1a
+[testcontainers.org 00:00:02.44] Execute "pg_isready --host localhost --dbname audit_test --username postgres" at Docker container e3326fa2ee1a
+[testcontainers.org 00:00:02.48] Docker container e3326fa2ee1a ready
+[testcontainers.org 00:00:02.83] Delete Docker container e3326fa2ee1a
+[xUnit.net 00:00:03.09]   Finished:    Audit.Infrastructure.Tests
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

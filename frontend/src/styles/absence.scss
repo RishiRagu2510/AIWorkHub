@@ -1,0 +1,2362 @@
+.absence-page {
+  min-width: 0;
+
+  /* Global hide of native browser spin arrows */
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  .page-header {
+    margin-bottom: 24px;
+  }
+}
+
+/* =========================================================================
+   Custom Year Selector Dropdown
+   ========================================================================= */
+.absence-header-year {
+  .absence-year-field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+    .absence-field-label {
+      margin: 0;
+
+      span {
+        display: none;
+      }
+    }
+
+    .absence-hidden-native-select {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      width: 0;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+
+    .absence-year-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      height: 40px;
+      padding: 0 16px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      background: #ffffff;
+      color: #0f172a;
+      cursor: pointer;
+      user-select: none;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.02);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover {
+        border-color: #94a3b8;
+        background: #f8fafc;
+        box-shadow: 0 3px 8px rgba(15, 23, 42, 0.06);
+        transform: translateY(-1px);
+      }
+
+      &:focus,
+      &.active {
+        outline: none;
+        border-color: #0f172a;
+        background: #ffffff;
+        box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
+      }
+
+      .absence-year-calendar-icon {
+        color: #475569;
+        flex-shrink: 0;
+        transition: color 0.15s ease;
+      }
+
+      .absence-year-val {
+        font-size: 14.5px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: #0f172a;
+      }
+
+      .absence-year-chevron {
+        color: #64748b;
+        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s ease;
+        margin-left: 2px;
+
+        &.open {
+          transform: rotate(180deg);
+          color: #0f172a;
+        }
+      }
+    }
+
+    .absence-year-popover {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      z-index: 50;
+      min-width: 160px;
+      max-height: 240px;
+      overflow-y: auto;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px -4px rgba(15, 23, 42, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.06);
+      padding: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      animation: popoverFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 10px;
+
+        &:hover {
+          background: #94a3b8;
+        }
+      }
+
+      .absence-year-option {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.15s ease;
+
+        &:hover {
+          background: #f1f5f9;
+        }
+
+        &.selected {
+          background: #0f172a;
+          color: #ffffff;
+
+          .absence-year-option-text {
+            font-weight: 700;
+            color: #ffffff;
+          }
+
+          .absence-year-curr-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+          }
+
+          .absence-year-check {
+            stroke: #ffffff;
+          }
+        }
+
+        .absence-year-option-text {
+          font-size: 13.5px;
+          font-weight: 500;
+          color: #334155;
+        }
+
+        .absence-year-curr-tag {
+          font-size: 10px;
+          font-weight: 600;
+          padding: 2px 6px;
+          border-radius: 4px;
+          background: #e0f2fe;
+          color: #0284c7;
+          text-transform: uppercase;
+          letter-spacing: 0.02em;
+        }
+
+        .absence-year-check {
+          stroke: #0f172a;
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+}
+
+/* Success & Warning Alert Banners */
+.absence-alert-success {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 10px;
+  color: #065f46;
+  font-size: 13.5px;
+  font-weight: 500;
+  margin-bottom: 20px;
+
+  svg {
+    stroke: #059669;
+    flex-shrink: 0;
+  }
+}
+
+.absence-alert-warning {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 10px;
+  color: #92400e;
+  font-size: 13.5px;
+  font-weight: 500;
+  margin-bottom: 20px;
+
+  svg {
+    stroke: #d97706;
+    flex-shrink: 0;
+  }
+}
+
+/* =========================================================================
+   Organization Leave Policy Accordion Card (PolicyEditor)
+   ========================================================================= */
+.absence-policy-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0 !important;
+  margin-bottom: 24px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+
+  &[open] {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    border-color: #cbd5e1;
+
+    .absence-policy-chevron svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  .absence-policy-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    cursor: pointer;
+    user-select: none;
+    background: #ffffff;
+    list-style: none;
+    transition: background 0.15s ease;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:hover {
+      background: #f8fafc;
+    }
+  }
+
+  .absence-policy-summary-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .absence-policy-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+  }
+
+  .absence-policy-title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .absence-policy-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+    letter-spacing: -0.01em;
+  }
+
+  .absence-admin-pill {
+    display: inline-flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: #e0f2fe;
+    color: #0284c7;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .absence-policy-chevron {
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+  }
+
+  .absence-policy-content {
+    padding: 20px 24px 24px 24px;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .absence-policy-info-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    color: #0369a1;
+    font-size: 13px;
+    line-height: 1.5;
+
+    svg {
+      stroke: #0284c7;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .absence-policy-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* 3-Column Policy Allowance Tiles */
+  .absence-policy-allowances {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+
+    .absence-policy-tile {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.15s ease;
+
+      &:hover {
+        border-color: #cbd5e1;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      }
+
+      .tile-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .tile-icon {
+          width: 32px;
+          height: 32px;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .tile-tag {
+          font-size: 11px;
+          font-weight: 500;
+          padding: 2px 7px;
+          border-radius: 4px;
+          background: #f1f5f9;
+          color: #64748b;
+          text-transform: uppercase;
+          letter-spacing: 0.02em;
+        }
+      }
+
+      &.tile-casual {
+        border-top: 3px solid #0284c7;
+
+        .tile-icon {
+          background: #e0f2fe;
+          color: #0284c7;
+        }
+      }
+
+      &.tile-sick {
+        border-top: 3px solid #d97706;
+
+        .tile-icon {
+          background: #fef3c7;
+          color: #d97706;
+        }
+      }
+
+      &.tile-earned {
+        border-top: 3px solid #059669;
+
+        .tile-icon {
+          background: #d1fae5;
+          color: #059669;
+        }
+      }
+    }
+  }
+
+  /* Action Buttons */
+  .absence-policy-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-top: 4px;
+
+    button.primary {
+      height: 40px;
+      padding: 0 24px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #ffffff;
+      background: #f59e0b;
+      border: 1px solid #d97706;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+
+      &:hover:not(:disabled) {
+        background: #d97706;
+        box-shadow: 0 2px 6px rgba(245, 158, 11, 0.25);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+
+    .absence-save-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #059669;
+
+      svg {
+        stroke: #059669;
+      }
+    }
+  }
+}
+
+/* =========================================================================
+   Custom Number Stepper Component
+   ========================================================================= */
+.absence-stepper-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+
+  span {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+  }
+
+  .absence-stepper-group {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 42px;
+    transition: all 0.15s ease;
+
+    &:focus-within {
+      border-color: #f59e0b;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+    }
+
+    .absence-stepper-btn {
+      width: 40px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f8fafc;
+      border: none;
+      color: #475569;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+      flex-shrink: 0;
+
+      svg {
+        stroke: #475569;
+        transition: stroke 0.15s ease;
+      }
+
+      &:hover:not(:disabled) {
+        background: #f1f5f9;
+        color: #0f172a;
+
+        svg {
+          stroke: #0f172a;
+        }
+      }
+
+      &:active:not(:disabled) {
+        background: #e2e8f0;
+      }
+
+      &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        background: #fafafa;
+      }
+
+      &.btn-down {
+        border-right: 1px solid #e2e8f0;
+      }
+
+      &.btn-up {
+        border-left: 1px solid #e2e8f0;
+      }
+    }
+
+    input[type='number'] {
+      flex: 1;
+      height: 100%;
+      border: none;
+      border-radius: 0;
+      padding: 0 8px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #0f172a;
+      background: transparent;
+      text-align: center;
+      width: 100%;
+      min-width: 0;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+/* =========================================================================
+   Custom Select Dropdown Component
+   ========================================================================= */
+.absence-custom-select-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 0;
+
+  .absence-field-label {
+    margin: 0;
+
+    span {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1e293b;
+      display: block;
+    }
+  }
+
+  .absence-hidden-native-select {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .absence-select-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 42px;
+    padding: 0 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s ease;
+
+    &:hover {
+      border-color: #94a3b8;
+    }
+
+    &:focus,
+    &.active {
+      outline: none;
+      border-color: #f59e0b;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+    }
+  }
+
+  .absence-select-trigger-val {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #0f172a;
+
+    .absence-select-icon {
+      color: #64748b;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .absence-select-chevron {
+    color: #64748b;
+    transition: transform 0.2s ease;
+
+    &.open {
+      transform: rotate(180deg);
+    }
+  }
+
+  .absence-select-popover {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    animation: popoverFadeIn 0.15s ease-out;
+  }
+
+  .absence-select-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.12s ease;
+
+    &:hover {
+      background: #f8fafc;
+    }
+
+    &.selected {
+      background: #f1f5f9;
+
+      .absence-option-name {
+        font-weight: 600;
+        color: #0f172a;
+      }
+    }
+  }
+
+  .absence-option-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .absence-option-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+      color: #475569;
+
+      &.absence-kind-casual {
+        background: #e0f2fe;
+        color: #0284c7;
+      }
+      &.absence-kind-sick {
+        background: #fef3c7;
+        color: #d97706;
+      }
+      &.absence-kind-earned {
+        background: #d1fae5;
+        color: #059669;
+      }
+      &.absence-kind-wfh {
+        background: #ede9fe;
+        color: #7c3aed;
+      }
+      &.absence-kind-unpaid {
+        background: #fee2e2;
+        color: #dc2626;
+      }
+    }
+
+    .absence-option-name {
+      font-size: 13.5px;
+      color: #334155;
+    }
+  }
+
+  .absence-option-check {
+    stroke: #f59e0b;
+  }
+}
+
+/* =========================================================================
+   Custom Date Picker Component
+   ========================================================================= */
+.absence-custom-date-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 0;
+
+  .absence-field-label {
+    margin: 0;
+
+    span {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1e293b;
+      display: block;
+    }
+  }
+
+  .absence-hidden-native-date {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .absence-date-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 42px;
+    padding: 0 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s ease;
+
+    &:hover {
+      border-color: #94a3b8;
+    }
+
+    &:focus,
+    &.active {
+      outline: none;
+      border-color: #f59e0b;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+    }
+  }
+
+  .absence-date-val {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #0f172a;
+  }
+
+  .absence-date-placeholder {
+    font-size: 13.5px;
+    color: #94a3b8;
+  }
+
+  .absence-date-calendar-icon {
+    color: #64748b;
+  }
+
+  .absence-calendar-popover {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 50;
+    width: 290px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 12px 28px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: popoverFadeIn 0.15s ease-out;
+  }
+
+  .absence-calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .calendar-month-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.01em;
+    }
+
+    .calendar-nav-btn {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #0f172a;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      transition: all 0.15s ease;
+
+      svg {
+        width: 16px;
+        height: 16px;
+        stroke: #0f172a;
+        stroke-width: 2.5px;
+        display: block;
+        flex-shrink: 0;
+      }
+
+      &:hover:not(:disabled) {
+        background: #f8fafc;
+        border-color: #cbd5e1;
+        box-shadow: 0 2px 5px rgba(15, 23, 42, 0.06);
+
+        svg {
+          stroke: #0f172a;
+        }
+      }
+
+      &:active:not(:disabled) {
+        transform: scale(0.95);
+      }
+
+      &:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+        background: #f8fafc;
+        border-color: #f1f5f9;
+        box-shadow: none;
+
+        svg {
+          stroke: #94a3b8;
+        }
+      }
+    }
+  }
+
+  .absence-calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .absence-calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+
+    .calendar-day {
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 500;
+      border: none;
+      background: transparent;
+      color: #0f172a;
+      cursor: pointer;
+      transition: all 0.12s ease;
+
+      &.muted {
+        color: #cbd5e1;
+        cursor: default;
+      }
+
+      &.current:hover:not(:disabled) {
+        background: #f1f5f9;
+        color: #0f172a;
+      }
+
+      &.today {
+        font-weight: 700;
+        color: #d97706;
+      }
+
+      &.selected {
+        background: #f1f5f9 !important;
+        color: #0f172a !important;
+        font-weight: 700;
+        border: 1px solid #cbd5e1;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      }
+
+      &:disabled {
+        color: #cbd5e1;
+        opacity: 0.35;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .absence-calendar-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
+
+    .calendar-action-link {
+      background: none;
+      border: none;
+      font-size: 13px;
+      font-weight: 500;
+      color: #64748b;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: all 0.12s ease;
+
+      &:hover {
+        color: #0f172a;
+        background: #f8fafc;
+      }
+
+      &.today-btn {
+        color: #d97706;
+        font-weight: 600;
+
+        &:hover {
+          color: #b45309;
+          background: #fffbe6;
+        }
+      }
+    }
+  }
+}
+
+@keyframes popoverFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================================
+   Leave Balances Grid
+   ========================================================================= */
+.absence-balances {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+
+  .absence-balance-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px 22px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .absence-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .absence-card-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      h2 {
+        font-size: 15px;
+        font-weight: 600;
+        color: #0f172a;
+        margin: 0;
+      }
+    }
+
+    .absence-card-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .absence-card-annual-badge {
+      font-size: 11.5px;
+      font-weight: 500;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    .absence-card-stat {
+      margin-bottom: 12px;
+
+      strong {
+        font-size: 32px;
+        font-weight: 700;
+        color: #0f172a;
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        line-height: 1;
+
+        small {
+          font-size: 13.5px;
+          font-weight: 500;
+          color: #64748b;
+        }
+      }
+    }
+
+    .absence-card-progress-bar {
+      height: 6px;
+      border-radius: 3px;
+      background: #f1f5f9;
+      display: flex;
+      overflow: hidden;
+      margin-bottom: 16px;
+
+      .absence-progress-used {
+        height: 100%;
+        background: #f59e0b;
+        transition: width 0.3s ease;
+      }
+
+      .absence-progress-pending {
+        height: 100%;
+        background: #cbd5e1;
+        transition: width 0.3s ease;
+      }
+    }
+
+    .absence-card-footer {
+      padding-top: 12px;
+      border-top: 1px solid #f1f5f9;
+
+      p {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 12px;
+        color: #64748b;
+      }
+
+      .absence-stat-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 2px 7px;
+        border-radius: 4px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        font-size: 11.5px;
+        font-weight: 500;
+        color: #475569;
+
+        .dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+        }
+
+        &.approved .dot {
+          background: #10b981;
+        }
+
+        &.pending .dot {
+          background: #f59e0b;
+        }
+      }
+    }
+
+    /* Card Themes */
+    &.absence-card-casual {
+      border-top: 3px solid #0284c7;
+
+      .absence-card-icon {
+        background: #e0f2fe;
+        color: #0284c7;
+      }
+
+      .absence-progress-used {
+        background: #0284c7;
+      }
+    }
+
+    &.absence-card-sick {
+      border-top: 3px solid #d97706;
+
+      .absence-card-icon {
+        background: #fef3c7;
+        color: #d97706;
+      }
+
+      .absence-progress-used {
+        background: #d97706;
+      }
+    }
+
+    &.absence-card-earned {
+      border-top: 3px solid #059669;
+
+      .absence-card-icon {
+        background: #d1fae5;
+        color: #059669;
+      }
+
+      .absence-progress-used {
+        background: #059669;
+      }
+    }
+  }
+}
+
+/* Generic Panel container */
+.absence-page .employee-panel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px 28px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  margin-bottom: 24px;
+}
+
+/* =========================================================================
+   New Request Card
+   ========================================================================= */
+.absence-request-card {
+  .absence-card-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f1f5f9;
+
+    .absence-card-header-titles {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      h2 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #0f172a;
+        margin: 0;
+        letter-spacing: -0.01em;
+      }
+
+      .absence-subtitle {
+        font-size: 13px;
+        color: #64748b;
+        margin: 0;
+      }
+    }
+  }
+
+  .absence-approver-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 14px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #334155;
+
+    svg {
+      stroke: #64748b;
+    }
+  }
+
+  .absence-request-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .absence-request-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px 20px;
+
+    .absence-wide {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+
+      span {
+        font-size: 13px;
+        font-weight: 600;
+        color: #1e293b;
+      }
+
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        padding: 12px 14px;
+        font-size: 13.5px;
+        background: #ffffff;
+        resize: vertical;
+        min-height: 80px;
+        color: #0f172a;
+        line-height: 1.5;
+        font-family: inherit;
+        transition: all 0.15s ease;
+
+        &:focus {
+          outline: none;
+          border-color: #f59e0b;
+          box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+        }
+      }
+    }
+  }
+
+  .absence-duration-bar {
+    display: flex;
+    align-items: center;
+    margin-top: -4px;
+    margin-bottom: 2px;
+
+    .absence-duration-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+
+      svg {
+        flex-shrink: 0;
+      }
+
+      strong {
+        font-weight: 700;
+      }
+
+      &.valid {
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        color: #15803d;
+
+        svg {
+          stroke: #16a34a;
+        }
+      }
+
+      &.exceeded {
+        background: #fef2f2;
+        border: 1px solid #fca5a5;
+        color: #b91c1c;
+
+        svg {
+          stroke: #dc2626;
+        }
+      }
+    }
+  }
+
+  .absence-request-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-top: 14px;
+    border-top: 1px solid #f1f5f9;
+
+    button.primary {
+      height: 40px;
+      padding: 0 24px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #ffffff;
+      background: #f59e0b;
+      border: 1px solid #d97706;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      svg {
+        stroke: #ffffff;
+      }
+
+      &:hover:not(:disabled) {
+        background: #d97706;
+        box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+
+    .absence-form-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      color: #64748b;
+
+      svg {
+        stroke: #94a3b8;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+/* =========================================================================
+   Requests & Approvals Section
+   ========================================================================= */
+.absence-table-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03), 0 1px 2px rgba(15, 23, 42, 0.02);
+
+  .absence-table-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 16px;
+
+    .actions[aria-label="Request views"] {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #f1f5f9;
+      padding: 4px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+    }
+  }
+
+  .absence-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 7px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+
+    svg {
+      stroke: currentColor;
+      transition: stroke 0.18s ease;
+    }
+
+    &:hover:not(.active):not([aria-pressed='true']) {
+      color: #0f172a;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    &.active,
+    &[aria-pressed='true'] {
+      background: #ffffff;
+      color: #0f172a;
+      font-weight: 600;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+
+      svg {
+        stroke: #0f172a;
+      }
+    }
+  }
+
+  .absence-refresh-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 15px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 9px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+
+    &:hover:not(:disabled) {
+      background: #f8fafc;
+      color: #0f172a;
+      border-color: #cbd5e1;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    &:active:not(:disabled) {
+      transform: translateY(1px);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .spin {
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Absence Table */
+.absence-table {
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+
+  table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 13.5px;
+  }
+
+  th {
+    background: #f8fafc;
+    padding: 14px 18px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  td {
+    padding: 16px 18px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+    color: #1e293b;
+    overflow-wrap: anywhere;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr.absence-empty-row td {
+    border-bottom: none;
+    padding: 0;
+  }
+
+  tr:hover:not(.absence-empty-row) td {
+    background: #f8fafc;
+  }
+
+  /* Employee cell */
+  .absence-employee-cell {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+
+    .absence-employee-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #e0f2fe;
+      color: #0369a1;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 1px 2px rgba(3, 105, 161, 0.1);
+    }
+
+    .absence-employee-name {
+      font-weight: 600;
+      color: #0f172a;
+      font-size: 13.5px;
+    }
+  }
+
+  /* Kind chips */
+  .absence-kind-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 6px;
+    background: #f1f5f9;
+    color: #334155;
+    white-space: nowrap;
+
+    svg {
+      stroke: currentColor;
+      flex-shrink: 0;
+    }
+
+    &.absence-kind-casual {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+
+    &.absence-kind-sick {
+      background: #fef3c7;
+      color: #b45309;
+    }
+
+    &.absence-kind-earned {
+      background: #d1fae5;
+      color: #047857;
+    }
+
+    &.absence-kind-wfh {
+      background: #ede9fe;
+      color: #6d28d9;
+    }
+
+    &.absence-kind-unpaid {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+  }
+
+  /* Date range */
+  .absence-dates-range {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #334155;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+
+    .absence-date-val {
+      font-weight: 500;
+    }
+
+    .absence-date-sep {
+      color: #94a3b8;
+      font-weight: 600;
+    }
+  }
+
+  /* Days pill */
+  .absence-days-pill {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #334155;
+    white-space: nowrap;
+  }
+
+  /* Reason text */
+  .absence-reason-cell {
+    max-width: 220px;
+
+    .absence-reason-text {
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    .absence-decision-note {
+      margin-top: 6px;
+      padding: 6px 10px;
+      background: #f8fafc;
+      border-left: 3px solid #94a3b8;
+      border-radius: 0 4px 4px 0;
+      font-size: 12px;
+      color: #475569;
+
+      .absence-decision-label {
+        font-weight: 600;
+        color: #1e293b;
+      }
+    }
+  }
+
+  /* Actions */
+  .absence-actions-cell {
+    min-width: 220px;
+  }
+
+  .absence-btn-cancel {
+    padding: 6px 14px;
+    font-size: 12.5px;
+    font-weight: 600;
+    border-radius: 6px;
+    border: 1px solid #fee2e2;
+    background: #fff5f5;
+    color: #b91c1c;
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    &:hover:not(:disabled) {
+      background: #fee2e2;
+      border-color: #fca5a5;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  .absence-empty-action {
+    color: #94a3b8;
+    font-size: 14px;
+  }
+}
+
+/* Manager decisions */
+.absence-decisions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 240px;
+
+  input.absence-decision-input {
+    height: 34px !important;
+    padding: 0 10px !important;
+    font-size: 12px !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transition: all 0.15s ease !important;
+
+    &::placeholder {
+      color: #94a3b8 !important;
+      font-size: 12px !important;
+    }
+
+    &:focus {
+      outline: none !important;
+      border-color: #f59e0b !important;
+      box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.15) !important;
+    }
+  }
+
+  .absence-decision-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .absence-btn-approve {
+      height: 30px;
+      padding: 0 14px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 6px;
+      border: 1px solid #059669;
+      background: #059669;
+      color: #ffffff;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      transition: all 0.15s ease;
+      box-shadow: 0 1px 2px rgba(5, 150, 105, 0.15);
+
+      &:hover:not(:disabled) {
+        background: #047857;
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+
+    .absence-btn-reject {
+      height: 30px;
+      padding: 0 14px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #dc2626;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      transition: all 0.15s ease;
+
+      &:hover:not(:disabled) {
+        background: #fef2f2;
+        border-color: #fca5a5;
+      }
+
+      &:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+        border-color: #e2e8f0;
+        color: #94a3b8;
+      }
+    }
+  }
+}
+
+/* Empty Table State */
+.absence-table-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  text-align: center;
+  color: #64748b;
+
+  .absence-empty-icon-badge {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    color: #64748b;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+
+    svg {
+      stroke: #64748b;
+    }
+  }
+
+  .absence-empty-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+
+  .absence-empty-subtitle {
+    font-size: 13.5px;
+    color: #64748b;
+    max-width: 420px;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  p {
+    margin: 4px 0 0;
+    font-size: 13.5px;
+  }
+}
+
+/* Empty Profile Card */
+.absence-empty-profile-card {
+  text-align: center;
+  padding: 48px 32px !important;
+
+  .absence-empty-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    color: #64748b;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0 0 8px;
+  }
+
+  p {
+    font-size: 13.5px;
+    color: #64748b;
+    max-width: 520px;
+    margin: 0 auto 16px;
+    line-height: 1.5;
+  }
+
+  .absence-empty-actions {
+    margin-top: 20px;
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .absence-balances {
+    grid-template-columns: 1fr;
+  }
+
+  .absence-policy-card .absence-policy-allowances {
+    grid-template-columns: 1fr;
+  }
+
+  .absence-request-card .absence-request-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark Theme Support for Leave & WFH */
+html[data-theme='dark'] {
+  .absence-policy-card {
+    background: var(--theme-surface);
+    border-color: var(--theme-border);
+
+    .absence-policy-summary {
+      background: var(--theme-surface);
+      color: var(--theme-text);
+
+      &:hover {
+        background: var(--theme-surface-subtle);
+      }
+    }
+
+    .absence-policy-title {
+      color: var(--theme-text);
+    }
+
+    .absence-policy-badge {
+      background: rgba(37, 99, 235, 0.15);
+      border-color: rgba(37, 99, 235, 0.3);
+      color: #60a5fa;
+    }
+
+    .absence-policy-body {
+      background: var(--theme-surface);
+      border-top-color: var(--theme-border);
+    }
+
+    .absence-policy-field {
+      label > span {
+        color: var(--theme-muted);
+      }
+
+      .absence-stepper-group {
+        background: var(--theme-background);
+        border-color: var(--theme-border);
+
+        .absence-stepper-btn {
+          background: var(--theme-surface-subtle);
+          color: var(--theme-muted);
+
+          svg {
+            stroke: var(--theme-muted);
+          }
+
+          &:hover:not(:disabled) {
+            background: #243246;
+            color: var(--theme-text);
+
+            svg {
+              stroke: var(--theme-text);
+            }
+          }
+
+          &.btn-down {
+            border-right-color: var(--theme-border);
+          }
+
+          &.btn-up {
+            border-left-color: var(--theme-border);
+          }
+        }
+
+        input[type='number'] {
+          background: var(--theme-background);
+          color: var(--theme-text);
+        }
+      }
+    }
+  }
+
+  .absence-balances .absence-balance-card {
+    background: var(--theme-surface);
+    border-color: var(--theme-border);
+
+    .absence-card-title-group h2 {
+      color: var(--theme-text);
+    }
+
+    .absence-card-annual-badge {
+      background: var(--theme-surface-subtle);
+      border: 1px solid var(--theme-border);
+      color: var(--theme-muted);
+    }
+
+    .absence-card-stat strong {
+      color: var(--theme-text);
+
+      small {
+        color: var(--theme-muted);
+      }
+    }
+
+    .absence-card-progress-bar {
+      background: var(--theme-surface-subtle);
+      border: 1px solid var(--theme-border);
+    }
+
+    .absence-card-footer {
+      border-top-color: var(--theme-border);
+
+      .absence-stat-pill {
+        background: var(--theme-surface-subtle);
+        border-color: var(--theme-border);
+        color: var(--theme-muted);
+      }
+    }
+  }
+
+  .absence-year-field {
+    .absence-year-trigger {
+      background: var(--theme-surface);
+      border-color: var(--theme-border);
+      color: var(--theme-text);
+
+      .absence-year-calendar-icon {
+        color: var(--theme-muted);
+      }
+
+      .absence-year-val {
+        color: var(--theme-text);
+      }
+
+      .absence-year-chevron {
+        color: var(--theme-muted);
+
+        &.open {
+          color: #f59e0b;
+        }
+      }
+
+      &:hover {
+        border-color: #60a5fa;
+        background: #243246;
+
+        .absence-year-calendar-icon,
+        .absence-year-val,
+        .absence-year-chevron {
+          color: var(--theme-text);
+        }
+      }
+
+      &:focus,
+      &.active {
+        background: #202c3c;
+        border-color: #f59e0b;
+        box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+        color: #fcd78a;
+
+        .absence-year-calendar-icon,
+        .absence-year-val,
+        .absence-year-chevron {
+          color: #fcd78a;
+        }
+      }
+    }
+
+    .absence-year-popover {
+      background: var(--theme-surface);
+      border-color: var(--theme-border);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+
+      .absence-year-option {
+        color: var(--theme-text);
+
+        &:hover {
+          background: #243246;
+        }
+
+        &.selected {
+          background: #382b17;
+          color: #fcd78a;
+        }
+      }
+    }
+  }
+
+  .absence-request-card {
+    background: var(--theme-surface);
+    border-color: var(--theme-border);
+
+    .absence-card-topbar {
+      border-bottom-color: var(--theme-border);
+
+      .absence-card-header-titles {
+        h2 {
+          color: var(--theme-text);
+        }
+        .absence-subtitle {
+          color: var(--theme-muted);
+        }
+      }
+    }
+
+    .absence-approver-chip {
+      background: var(--theme-surface-subtle);
+      border-color: var(--theme-border);
+      color: var(--theme-text);
+
+      svg {
+        stroke: var(--theme-muted);
+      }
+    }
+
+    .absence-request-grid .absence-wide {
+      span {
+        color: var(--theme-text);
+      }
+
+      textarea {
+        background: var(--theme-background);
+        border-color: var(--theme-border);
+        color: var(--theme-text);
+
+        &:focus {
+          background: var(--theme-surface);
+          border-color: #f59e0b;
+        }
+      }
+    }
+
+    .absence-request-actions {
+      border-top-color: var(--theme-border);
+
+      .absence-form-hint {
+        color: var(--theme-muted);
+
+        svg {
+          stroke: var(--theme-muted);
+        }
+      }
+    }
+  }
+
+  .absence-custom-select-field {
+    .absence-field-label span {
+      color: var(--theme-text);
+    }
+
+    .absence-select-trigger {
+      background: var(--theme-background);
+      border-color: var(--theme-border);
+      color: var(--theme-text);
+
+      .absence-select-trigger-val {
+        color: var(--theme-text);
+      }
+    }
+
+    .absence-select-popover {
+      background: var(--theme-surface);
+      border-color: var(--theme-border);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+
+      .absence-select-option {
+        color: var(--theme-text);
+
+        &:hover {
+          background: #243246;
+        }
+
+        &.selected {
+          background: #382b17;
+
+          .absence-option-name {
+            color: #fcd78a;
+          }
+        }
+      }
+    }
+  }
+
+  .absence-custom-date-field {
+    .absence-field-label span {
+      color: var(--theme-text);
+    }
+
+    .absence-date-trigger {
+      background: var(--theme-background);
+      border-color: var(--theme-border);
+      color: var(--theme-text);
+
+      .absence-date-val {
+        color: var(--theme-text);
+      }
+
+      .absence-date-placeholder {
+        color: var(--theme-muted);
+      }
+
+      .absence-date-calendar-icon {
+        color: var(--theme-muted);
+      }
+    }
+
+    .absence-calendar-popover {
+      background: var(--theme-surface);
+      border-color: var(--theme-border);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+
+      .absence-calendar-header {
+        .calendar-month-title {
+          color: var(--theme-text);
+        }
+
+        .calendar-nav-btn {
+          background: var(--theme-surface-subtle);
+          border-color: var(--theme-border);
+          color: var(--theme-text);
+
+          svg {
+            stroke: var(--theme-text);
+          }
+
+          &:hover:not(:disabled) {
+            background: #243246;
+          }
+        }
+      }
+
+      .absence-calendar-weekdays span {
+        color: var(--theme-muted);
+      }
+
+      .calendar-day-btn {
+        color: var(--theme-text);
+
+        &:hover:not(:disabled) {
+          background: #243246;
+        }
+
+        &.selected {
+          background: #f59e0b;
+          color: #111827;
+        }
+
+        &.today:not(.selected) {
+          border-color: #f59e0b;
+          color: #fcd78a;
+        }
+      }
+    }
+  }
+
+  .absence-table-card {
+    background: var(--theme-surface);
+    border-color: var(--theme-border);
+
+    .absence-table-header-row .actions[aria-label="Request views"] {
+      background: var(--theme-surface-subtle);
+      border-color: var(--theme-border);
+    }
+
+    .absence-tab-btn {
+      color: var(--theme-muted);
+
+      &:hover:not(.active):not([aria-pressed='true']) {
+        color: var(--theme-text);
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      &.active,
+      &[aria-pressed='true'] {
+        background: var(--theme-surface);
+        color: #fcd78a;
+        box-shadow: none;
+      }
+    }
+
+    .absence-refresh-btn {
+      background: var(--theme-surface-subtle);
+      border-color: var(--theme-border);
+      color: var(--theme-text);
+
+      &:hover:not(:disabled) {
+        background: #243246;
+        border-color: #60a5fa;
+      }
+    }
+
+    .absence-table {
+      background: var(--theme-surface);
+      border-color: var(--theme-border);
+
+      th {
+        background: #182230;
+        color: var(--theme-muted);
+        border-bottom-color: var(--theme-border);
+      }
+
+      td {
+        background: var(--theme-surface);
+        color: var(--theme-text);
+        border-bottom-color: var(--theme-border);
+      }
+
+      tr:hover:not(.absence-empty-row) td {
+        background: #243246;
+      }
+
+      .absence-employee-name {
+        color: var(--theme-text);
+      }
+
+      .absence-dates-range {
+        color: var(--theme-muted);
+      }
+
+      .absence-days-pill {
+        background: var(--theme-surface-subtle);
+        border-color: var(--theme-border);
+        color: var(--theme-text);
+      }
+
+      .absence-reason-text {
+        color: var(--theme-text);
+      }
+
+      .absence-action-cancel {
+        color: #fca5a5;
+
+        &:hover:not(:disabled) {
+          background: rgba(220, 38, 38, 0.15);
+        }
+      }
+    }
+  }
+}

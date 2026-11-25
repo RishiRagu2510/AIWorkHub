@@ -1,0 +1,562 @@
+// Shared spacing and responsive behavior, after component and theme styles.
+:root {
+  --page-gutter: clamp(16px, 2.4vw, 32px);
+  --panel-gutter: clamp(16px, 1.8vw, 24px);
+  --layout-gap: clamp(16px, 2vw, 24px);
+}
+
+.workspace {
+  min-width: 0;
+  main {
+    padding: var(--page-gutter);
+    width: 100%;
+    margin-inline: auto;
+  }
+}
+.page-header {
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.page-header > div,
+.section-header > div {
+  min-width: 0;
+}
+.page-header h1,
+.section-header h2,
+.project-overview-meta,
+.user-identity,
+.preserve-lines,
+.comment,
+.notification-inbox {
+  overflow-wrap: anywhere;
+}
+.section-header {
+  padding: 16px var(--panel-gutter);
+  flex-wrap: wrap;
+}
+.panel-body,
+.form-body,
+.profile-settings-body,
+.collaboration-body {
+  padding: var(--panel-gutter);
+}
+.form-footer {
+  padding: 16px var(--panel-gutter);
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.form-grid {
+  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.field,
+.form-grid > *,
+.dashboard-columns > *,
+.dashboard-aside,
+.detail-grid > *,
+.issue-split > *,
+.work-groups > *,
+.admin-charts > * {
+  min-width: 0;
+}
+.field input,
+.field select,
+.field textarea,
+.collaboration-panel form {
+  max-width: 100%;
+}
+.filters {
+  padding: 16px var(--panel-gutter);
+  gap: 16px;
+}
+.filters > .field {
+  flex: 1 1 160px;
+  min-width: 0;
+}
+.actions,
+.project-overview-meta,
+.pagination,
+.live-status {
+  flex-wrap: wrap;
+}
+.table-scroll {
+  max-width: 100%;
+  overscroll-behavior-x: contain;
+}
+.table-scroll:focus-visible {
+  outline: 2px solid #f59e0b;
+  outline-offset: -2px;
+}
+.status-tabs {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.status-tabs button {
+  flex-shrink: 0;
+}
+.issue-board {
+  overscroll-behavior-x: contain;
+}
+pre {
+  max-width: 100%;
+  overflow: auto;
+}
+.sidebar {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.topbar .global-search {
+  min-width: 0;
+}
+.topbar .global-search input {
+  min-width: 0;
+}
+.tenant-chip {
+  max-width: 28vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.app-footer {
+  padding: 16px var(--page-gutter);
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.project-members .project-members-body {
+  padding: var(--panel-gutter);
+}
+.project-members .project-members-form {
+  gap: 12px;
+}
+.project-members .members-access-card {
+  min-width: 0;
+}
+.project-members .members-access-card .user-identity {
+  white-space: normal;
+}
+.project-members .project-members-list > li {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+// Every dialog remains reachable with a small screen or an on-screen keyboard.
+dialog {
+  max-width: calc(100vw - 24px);
+  max-height: calc(100dvh - 24px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  overflow-wrap: anywhere;
+}
+dialog .section-header,
+dialog .form-body,
+dialog .profile-settings-body,
+dialog .drawer-body {
+  padding: var(--panel-gutter);
+}
+dialog .form-footer {
+  padding: 16px var(--panel-gutter);
+}
+dialog.audit-drawer {
+  max-height: 100dvh;
+}
+
+@media (max-width: 1100px) {
+  .detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .detail-grid .metadata {
+    order: initial;
+  }
+  .issue-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .issue-list-pane {
+    border-right: 0;
+    border-bottom: 1px solid var(--theme-border, #e2e6eb);
+  }
+  .dashboard-aside {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .topbar {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .workspace {
+    margin: var(--header-height) 0 0;
+    width: 100%;
+  }
+  .sidebar {
+    width: min(280px, calc(100vw - 48px));
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+  }
+  .sidebar nav a {
+    min-height: 44px;
+    font-size: 14px;
+  }
+  .topbar {
+    padding-inline: max(12px, env(safe-area-inset-left));
+  }
+  .topbar .icon-button,
+  .topbar .user-menu summary {
+    min-height: 44px;
+    min-width: 44px;
+    justify-content: center;
+  }
+  .topbar .global-search {
+    display: flex;
+  }
+  .topbar .user-menu {
+    flex-shrink: 0;
+  }
+  .project-filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: var(--panel-gutter);
+    gap: 16px;
+  }
+  .project-filters > label,
+  .project-filters .project-filter-search {
+    min-width: 0;
+    max-width: none;
+  }
+  .project-filters input,
+  .project-filters select {
+    width: 100%;
+    min-width: 0;
+  }
+  .project-filters .project-filter-search {
+    grid-column: 1 / -1;
+  }
+  .project-filters > button {
+    justify-self: start;
+  }
+  .form-grid,
+  .advanced-filters .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .issue-inspector .metadata dl {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .bulk-controls {
+    gap: 16px;
+  }
+  .bulk-controls > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .pagination {
+    padding: 16px;
+    gap: 12px;
+  }
+  .breadcrumbs {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --page-gutter: 16px;
+    --panel-gutter: 16px;
+  }
+  h1 {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+  .workspace main {
+    padding-bottom: max(24px, env(safe-area-inset-bottom));
+  }
+  .page-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .page-header .actions {
+    width: 100%;
+    gap: 8px;
+  }
+  .page-header .actions > .button,
+  .page-header .actions > button {
+    flex: 1 1 auto;
+  }
+  .section-header h2 {
+    line-height: 1.4;
+  }
+  .dashboard-page > .page-header {
+    padding: var(--panel-gutter);
+  }
+  .overview-grid,
+  .audit-summary,
+  .dashboard-aside {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  .filters {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .filters > .field,
+  .filters > .field:first-child {
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+  }
+  .filters .actions {
+    width: 100%;
+  }
+  .filters .actions > button {
+    flex: 1;
+  }
+  .project-filters {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .project-filters > button {
+    justify-self: stretch;
+  }
+  .advanced-filters {
+    width: 100%;
+  }
+  .advanced-filters .form-grid {
+    width: 100%;
+  }
+  .form-footer {
+    justify-content: stretch;
+  }
+  .form-footer > button,
+  .form-footer > .button {
+    flex: 1 1 100px;
+    text-align: center;
+  }
+  button,
+  .button,
+  summary {
+    min-height: 44px;
+  }
+  // 16px inputs prevent automatic zoom when focusing fields on iOS.
+  input:not([type='checkbox']):not([type='radio']),
+  select,
+  textarea,
+  .field input,
+  .field select,
+  .field textarea,
+  .board-card .board-transition select,
+  .global-search input {
+    font-size: 16px;
+    min-height: 44px;
+  }
+  input[type='checkbox'],
+  input[type='radio'] {
+    flex-shrink: 0;
+  }
+  .topbar {
+    gap: 4px;
+  }
+  .topbar .brand {
+    display: none;
+  }
+  .topbar .global-search {
+    padding-right: 4px;
+  }
+  .topbar .global-search button {
+    padding-inline: 8px;
+  }
+  .topbar .global-search input {
+    width: 0;
+    flex: 1;
+  }
+  .topbar .user-menu summary {
+    padding-inline: 4px;
+  }
+  .user-menu .user-popover,
+  .notification-inbox {
+    position: fixed;
+    top: calc(var(--header-height) + 8px);
+    right: 12px;
+    width: calc(100vw - 24px);
+    max-width: 440px;
+    max-height: calc(100dvh - var(--header-height) - 24px);
+    overflow-y: auto;
+  }
+  .notification-inbox .section-header {
+    align-items: flex-start;
+  }
+  .notification-inbox li > div {
+    flex-wrap: wrap;
+  }
+  .project-members .project-members-form {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px;
+  }
+  .project-members .project-members-field {
+    flex: auto;
+    width: 100%;
+    min-width: 0;
+  }
+  .project-members .project-members-form > button {
+    width: 100%;
+  }
+  .project-members .members-panel-heading {
+    min-width: 0;
+  }
+  .members-access-grid {
+    gap: 16px;
+  }
+  .project-members .members-access-card {
+    padding: 12px;
+  }
+  .board-workspace {
+    padding: 12px;
+  }
+  .issue-board {
+    scroll-snap-type: x proximity;
+  }
+  .board-column {
+    scroll-snap-align: start;
+  }
+  .issue-assignee .assignee-selection {
+    flex-wrap: wrap;
+  }
+  .attachment-list li {
+    align-items: flex-start;
+  }
+  .attachment-list li > span {
+    flex-basis: 100%;
+  }
+  .activity-event-header {
+    flex-wrap: wrap;
+  }
+  .audit-changes,
+  .event-metadata {
+    overflow-wrap: anywhere;
+  }
+  .json-comparison {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  dialog.audit-drawer {
+    width: 100%;
+    max-width: 100vw;
+  }
+  .snackbar,
+  .toast {
+    max-width: calc(100vw - 24px);
+    right: 12px;
+    overflow-wrap: anywhere;
+  }
+  .sso-page {
+    min-height: 100dvh;
+  }
+  .sso-header {
+    padding: 20px 16px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .sso-main {
+    padding: 16px 16px 32px;
+    min-width: 0;
+  }
+  .sso-center {
+    min-width: 0;
+  }
+  .sso-card {
+    padding: 24px 16px;
+  }
+  .sso-card h1 {
+    font-size: 24px;
+  }
+  .sso-footer {
+    padding: 16px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .google-identity-signin {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .project-create-dialog .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  // Keep project actions and expanded membership within the phone viewport.
+  // Other ledgers retain their column relationships in a scrollable region.
+  .projects-panel > div > .table-scroll > table,
+  .projects-panel .table-scroll > table {
+    min-width: 0;
+    width: 100%;
+  }
+  .projects-panel .table-scroll > table > thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .projects-panel .table-scroll > table > tbody {
+    display: block;
+  }
+  .projects-panel .table-scroll > table > tbody > tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 16px;
+    gap: 12px;
+    border-bottom: 1px solid var(--theme-border, #e2e6eb);
+  }
+  .projects-panel .table-scroll > table > tbody > tr > td {
+    display: block;
+    width: auto;
+    max-width: none;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    white-space: normal;
+  }
+  .projects-panel .table-scroll > table > tbody > tr > td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    color: var(--theme-muted, #596575);
+    font-weight: 500;
+  }
+  .projects-panel .project-identity,
+  .projects-panel .project-actions {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .projects-panel .project-name,
+  .projects-panel .project-description {
+    max-width: none;
+    overflow-wrap: anywhere;
+  }
+  .projects-panel .project-primary-actions,
+  .projects-panel .project-secondary-actions {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+  .projects-panel .project-actions {
+    align-items: stretch;
+  }
+  .projects-panel .table-scroll > table > tbody > .expanded-detail-row {
+    padding: 0 12px 12px;
+  }
+  .projects-panel .expanded-detail-row .section-header,
+  .projects-panel .expanded-detail-row .project-members-body {
+    padding: 16px;
+  }
+}
+
+@media (pointer: coarse) {
+  .view-switch button,
+  .status-tabs button,
+  .project-actions button,
+  .project-actions .button,
+  .pagination button {
+    min-height: 44px;
+  }
+}
+
+.collaboration-panel > *,
+.collaboration-panel form > * {
+  min-width: 0;
+}

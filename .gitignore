@@ -1,0 +1,32 @@
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+# Local secrets (model API keys)
+appsettings.Secrets.json
+**/appsettings.Secrets.json
+
+# Runtime logs (can contain request URLs)
+logs/
+
+# IDE and user folders
+.idea/
+.local/
+.nuget/
+Library/
+.gemini/
+.agents/
+
+# Frontend & system artifacts
+node_modules/
+**/node_modules/
+.DS_Store
+**/.DS_Store
+dist/
+**/dist/
+.pw-qa/
+playwright-report/
+**/playwright-report/
+test-results/
+**/test-results/

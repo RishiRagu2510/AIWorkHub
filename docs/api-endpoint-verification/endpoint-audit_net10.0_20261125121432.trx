@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="93be0987-07eb-4bb0-bbe5-33ae630f90b8" name="@C18985 2026-11-25 12:14:23" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-25T12:14:23.6723060+05:30" queuing="2026-11-25T12:14:23.6723060+05:30" start="2026-11-25T12:14:19.8386740+05:30" finish="2026-11-25T12:14:32.3462130+05:30" />
+  <TestSettings name="default" id="9d217f86-0d22-4d65-9dff-993248231efe">
+    <Deployment runDeploymentRoot="_C18985_2026-11-25_12_14_23" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="29d8f8a3-e16a-42de-ae4b-1afcef58f6ab" testId="f08b7471-1b31-1981-b702-a218285b53c9" testName="Jira.Infrastructure.Tests.OutboxLeaseTests.MarkFailedAsync_SchedulesRetryAndReleasesLease" computerName="C18985" duration="00:00:00.0048772" startTime="2026-11-25T12:14:25.1127360+05:30" endTime="2026-11-25T12:14:26.5413480+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="29d8f8a3-e16a-42de-ae4b-1afcef58f6ab" />
+    <UnitTestResult executionId="924281fd-f4f3-40b0-96cd-3888cbf962f5" testId="325d0262-09a0-2fcc-d01f-bababeff6c74" testName="Jira.Infrastructure.Tests.OutboxLeaseTests.MarkPublishedAsync_MarksMessageProcessedAndReleasesLease" computerName="C18985" duration="00:00:00.2493407" startTime="2026-11-25T12:14:20.1432600+05:30" endTime="2026-11-25T12:14:23.6488470+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="924281fd-f4f3-40b0-96cd-3888cbf962f5" />
+    <UnitTestResult executionId="444921c9-ab56-4974-bf46-113fbb29fcc6" testId="27f14c65-b991-2c2a-bc6b-23b7f7d00063" testName="Jira.Infrastructure.Tests.OutboxLeaseTests.TryClaimAsync_AllowsOnlyOnePublisherToClaimMessage" computerName="C18985" duration="00:00:00.0100335" startTime="2026-11-25T12:14:30.8843890+05:30" endTime="2026-11-25T12:14:32.3126840+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="444921c9-ab56-4974-bf46-113fbb29fcc6" />
+    <UnitTestResult executionId="1fa23dc4-c34e-4090-ae0c-e6f392a6740b" testId="1fc09d39-ace4-d5e0-89c8-f566c0729f60" testName="Jira.Infrastructure.Tests.OutboxLeaseTests.TryClaimAsync_DoesNotClaimProcessedMessage" computerName="C18985" duration="00:00:00.0043004" startTime="2026-11-25T12:14:29.4790200+05:30" endTime="2026-11-25T12:14:30.8842850+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1fa23dc4-c34e-4090-ae0c-e6f392a6740b" />
+    <UnitTestResult executionId="0d722798-bc8e-495b-b5f3-30551248123f" testId="2a6137f2-4c1b-84e3-2f11-b354be143319" testName="Jira.Infrastructure.Tests.OutboxLeaseTests.MarkFailedAsync_DoesNotUpdateMessageOwnedByAnotherPublisher" computerName="C18985" duration="00:00:00.0037963" startTime="2026-11-25T12:14:26.5414730+05:30" endTime="2026-11-25T12:14:28.0436410+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0d722798-bc8e-495b-b5f3-30551248123f" />
+    <UnitTestResult executionId="67c7fb37-a8c1-4a9d-95e0-f7de867775d4" testId="5633fcc3-5f78-3687-650e-1671cdc38c00" testName="Jira.Infrastructure.Tests.OutboxCleanupTests.CleanupAsync_PreservesPendingMessage" computerName="C18985" duration="00:00:00.2508201" startTime="2026-11-25T12:14:20.1438820+05:30" endTime="2026-11-25T12:14:23.6602380+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67c7fb37-a8c1-4a9d-95e0-f7de867775d4" />
+    <UnitTestResult executionId="08b9e65d-3142-4cf0-849b-583cd1d58039" testId="89f04c0f-9959-e770-27db-b954a6eda6c7" testName="Jira.Infrastructure.Tests.OutboxLeaseTests.TryClaimAsync_CanReclaimExpiredLease" computerName="C18985" duration="00:00:00.0046292" startTime="2026-11-25T12:14:28.0437650+05:30" endTime="2026-11-25T12:14:29.4788330+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="08b9e65d-3142-4cf0-849b-583cd1d58039" />
+    <UnitTestResult executionId="665e5195-51b0-4156-b895-83c010138660" testId="f7751fd5-687b-977e-3b7b-09da8831a381" testName="Jira.Infrastructure.Tests.OutboxCleanupTests.CleanupAsync_DeletesProcessedMessageOlderThanRetention" computerName="C18985" duration="00:00:00.0059645" startTime="2026-11-25T12:14:28.0117730+05:30" endTime="2026-11-25T12:14:29.4508080+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="665e5195-51b0-4156-b895-83c010138660" />
+    <UnitTestResult executionId="787ea9a8-c979-4436-8732-7d42abffe4e1" testId="be1ac075-2b7c-dbd5-464e-d4b38c33abd0" testName="Jira.Infrastructure.Tests.OutboxCleanupTests.CleanupAsync_DeletesExpiredLease" computerName="C18985" duration="00:00:00.0433898" startTime="2026-11-25T12:14:23.6607180+05:30" endTime="2026-11-25T12:14:25.1465850+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="787ea9a8-c979-4436-8732-7d42abffe4e1" />
+    <UnitTestResult executionId="e5868ff5-0c54-42db-ae8c-d63e1ea8adfb" testId="13f80414-6a6e-f235-fff2-3c1b41e7c788" testName="Jira.Infrastructure.Tests.OutboxCleanupTests.CleanupAsync_PreservesMessageWithActiveLease" computerName="C18985" duration="00:00:00.0044145" startTime="2026-11-25T12:14:26.5536690+05:30" endTime="2026-11-25T12:14:28.0115150+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e5868ff5-0c54-42db-ae8c-d63e1ea8adfb" />
+    <UnitTestResult executionId="0e940db3-6a9e-4101-8a8b-ef764ae099f5" testId="60beadb0-215b-071e-773c-2767df359051" testName="Jira.Infrastructure.Tests.OutboxCleanupTests.CleanupAsync_PreservesRecentProcessedMessage" computerName="C18985" duration="00:00:00.0056010" startTime="2026-11-25T12:14:25.1467730+05:30" endTime="2026-11-25T12:14:26.5535180+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0e940db3-6a9e-4101-8a8b-ef764ae099f5" />
+    <UnitTestResult executionId="083d08b5-ea5d-4bf9-8815-2f9ff8508724" testId="b7e20dc2-1eb2-4b58-13eb-c74012ba5d70" testName="Jira.Infrastructure.Tests.OutboxLeaseTests.MarkPublishedAsync_DoesNotUpdateMessageOwnedByAnotherPublisher" computerName="C18985" duration="00:00:00.0065939" startTime="2026-11-25T12:14:23.6559970+05:30" endTime="2026-11-25T12:14:25.1123240+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="083d08b5-ea5d-4bf9-8815-2f9ff8508724" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Jira.Infrastructure.Tests.OutboxCleanupTests.CleanupAsync_PreservesMessageWithActiveLease" storage="/users/rragupathi/desktop/aiworkhub/backend/services/jira/tests/jira.infrastructure.tests/bin/debug/net10.0/jira.infrastructure.tests.dll" id="13f80414-6a6e-f235-fff2-3c1b41e7c788">
+      <Execution id="e5868ff5-0c54-42db-ae8c-d63e1ea8adfb" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/tests/Jira.Infrastructure.Tests/bin/Debug/net10.0/Jira.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Jira.Infrastructure.Tests.OutboxCleanupTests" name="CleanupAsync_PreservesMessageWithActiveLease" />
+    </UnitTest>
+    <UnitTest name="Jira.Infrastructure.Tests.OutboxCleanupTests.CleanupAsync_PreservesPendingMessage" storage="/users/rragupathi/desktop/aiworkhub/backend/services/jira/tests/jira.infrastructure.tests/bin/debug/net10.0/jira.infrastructure.tests.dll" id="5633fcc3-5f78-3687-650e-1671cdc38c00">
+      <Execution id="67c7fb37-a8c1-4a9d-95e0-f7de867775d4" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/tests/Jira.Infrastructure.Tests/bin/Debug/net10.0/Jira.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Jira.Infrastructure.Tests.OutboxCleanupTests" name="CleanupAsync_PreservesPendingMessage" />
+    </UnitTest>
+    <UnitTest name="Jira.Infrastructure.Tests.OutboxLeaseTests.TryClaimAsync_AllowsOnlyOnePublisherToClaimMessage" storage="/users/rragupathi/desktop/aiworkhub/backend/services/jira/tests/jira.infrastructure.tests/bin/debug/net10.0/jira.infrastructure.tests.dll" id="27f14c65-b991-2c2a-bc6b-23b7f7d00063">
+      <Execution id="444921c9-ab56-4974-bf46-113fbb29fcc6" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/tests/Jira.Infrastructure.Tests/bin/Debug/net10.0/Jira.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Jira.Infrastructure.Tests.OutboxLeaseTests" name="TryClaimAsync_AllowsOnlyOnePublisherToClaimMessage" />
+    </UnitTest>
+    <UnitTest name="Jira.Infrastructure.Tests.OutboxLeaseTests.TryClaimAsync_CanReclaimExpiredLease" storage="/users/rragupathi/desktop/aiworkhub/backend/services/jira/tests/jira.infrastructure.tests/bin/debug/net10.0/jira.infrastructure.tests.dll" id="89f04c0f-9959-e770-27db-b954a6eda6c7">
+      <Execution id="08b9e65d-3142-4cf0-849b-583cd1d58039" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/tests/Jira.Infrastructure.Tests/bin/Debug/net10.0/Jira.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Jira.Infrastructure.Tests.OutboxLeaseTests" name="TryClaimAsync_CanReclaimExpiredLease" />
+    </UnitTest>
+    <UnitTest name="Jira.Infrastructure.Tests.OutboxCleanupTests.CleanupAsync_PreservesRecentProcessedMessage" storage="/users/rragupathi/desktop/aiworkhub/backend/services/jira/tests/jira.infrastructure.tests/bin/debug/net10.0/jira.infrastructure.tests.dll" id="60beadb0-215b-071e-773c-2767df359051">
+      <Execution id="0e940db3-6a9e-4101-8a8b-ef764ae099f5" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/tests/Jira.Infrastructure.Tests/bin/Debug/net10.0/Jira.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Jira.Infrastructure.Tests.OutboxCleanupTests" name="CleanupAsync_PreservesRecentProcessedMessage" />
+    </UnitTest>
+    <UnitTest name="Jira.Infrastructure.Tests.OutboxCleanupTests.CleanupAsync_DeletesExpiredLease" storage="/users/rragupathi/desktop/aiworkhub/backend/services/jira/tests/jira.infrastructure.tests/bin/debug/net10.0/jira.infrastructure.tests.dll" id="be1ac075-2b7c-dbd5-464e-d4b38c33abd0">
+      <Execution id="787ea9a8-c979-4436-8732-7d42abffe4e1" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/tests/Jira.Infrastructure.Tests/bin/Debug/net10.0/Jira.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Jira.Infrastructure.Tests.OutboxCleanupTests" name="CleanupAsync_DeletesExpiredLease" />
+    </UnitTest>
+    <UnitTest name="Jira.Infrastructure.Tests.OutboxLeaseTests.MarkPublishedAsync_DoesNotUpdateMessageOwnedByAnotherPublisher" storage="/users/rragupathi/desktop/aiworkhub/backend/services/jira/tests/jira.infrastructure.tests/bin/debug/net10.0/jira.infrastructure.tests.dll" id="b7e20dc2-1eb2-4b58-13eb-c74012ba5d70">
+      <Execution id="083d08b5-ea5d-4bf9-8815-2f9ff8508724" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/tests/Jira.Infrastructure.Tests/bin/Debug/net10.0/Jira.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Jira.Infrastructure.Tests.OutboxLeaseTests" name="MarkPublishedAsync_DoesNotUpdateMessageOwnedByAnotherPublisher" />
+    </UnitTest>
+    <UnitTest name="Jira.Infrastructure.Tests.OutboxLeaseTests.MarkFailedAsync_SchedulesRetryAndReleasesLease" storage="/users/rragupathi/desktop/aiworkhub/backend/services/jira/tests/jira.infrastructure.tests/bin/debug/net10.0/jira.infrastructure.tests.dll" id="f08b7471-1b31-1981-b702-a218285b53c9">
+      <Execution id="29d8f8a3-e16a-42de-ae4b-1afcef58f6ab" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/tests/Jira.Infrastructure.Tests/bin/Debug/net10.0/Jira.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Jira.Infrastructure.Tests.OutboxLeaseTests" name="MarkFailedAsync_SchedulesRetryAndReleasesLease" />
+    </UnitTest>
+    <UnitTest name="Jira.Infrastructure.Tests.OutboxLeaseTests.TryClaimAsync_DoesNotClaimProcessedMessage" storage="/users/rragupathi/desktop/aiworkhub/backend/services/jira/tests/jira.infrastructure.tests/bin/debug/net10.0/jira.infrastructure.tests.dll" id="1fc09d39-ace4-d5e0-89c8-f566c0729f60">
+      <Execution id="1fa23dc4-c34e-4090-ae0c-e6f392a6740b" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/tests/Jira.Infrastructure.Tests/bin/Debug/net10.0/Jira.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Jira.Infrastructure.Tests.OutboxLeaseTests" name="TryClaimAsync_DoesNotClaimProcessedMessage" />
+    </UnitTest>
+    <UnitTest name="Jira.Infrastructure.Tests.OutboxLeaseTests.MarkFailedAsync_DoesNotUpdateMessageOwnedByAnotherPublisher" storage="/users/rragupathi/desktop/aiworkhub/backend/services/jira/tests/jira.infrastructure.tests/bin/debug/net10.0/jira.infrastructure.tests.dll" id="2a6137f2-4c1b-84e3-2f11-b354be143319">
+      <Execution id="0d722798-bc8e-495b-b5f3-30551248123f" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/tests/Jira.Infrastructure.Tests/bin/Debug/net10.0/Jira.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Jira.Infrastructure.Tests.OutboxLeaseTests" name="MarkFailedAsync_DoesNotUpdateMessageOwnedByAnotherPublisher" />
+    </UnitTest>
+    <UnitTest name="Jira.Infrastructure.Tests.OutboxLeaseTests.MarkPublishedAsync_MarksMessageProcessedAndReleasesLease" storage="/users/rragupathi/desktop/aiworkhub/backend/services/jira/tests/jira.infrastructure.tests/bin/debug/net10.0/jira.infrastructure.tests.dll" id="325d0262-09a0-2fcc-d01f-bababeff6c74">
+      <Execution id="924281fd-f4f3-40b0-96cd-3888cbf962f5" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/tests/Jira.Infrastructure.Tests/bin/Debug/net10.0/Jira.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Jira.Infrastructure.Tests.OutboxLeaseTests" name="MarkPublishedAsync_MarksMessageProcessedAndReleasesLease" />
+    </UnitTest>
+    <UnitTest name="Jira.Infrastructure.Tests.OutboxCleanupTests.CleanupAsync_DeletesProcessedMessageOlderThanRetention" storage="/users/rragupathi/desktop/aiworkhub/backend/services/jira/tests/jira.infrastructure.tests/bin/debug/net10.0/jira.infrastructure.tests.dll" id="f7751fd5-687b-977e-3b7b-09da8831a381">
+      <Execution id="665e5195-51b0-4156-b895-83c010138660" />
+      <TestMethod codeBase="/Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/tests/Jira.Infrastructure.Tests/bin/Debug/net10.0/Jira.Infrastructure.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Jira.Infrastructure.Tests.OutboxCleanupTests" name="CleanupAsync_DeletesProcessedMessageOlderThanRetention" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="f08b7471-1b31-1981-b702-a218285b53c9" executionId="29d8f8a3-e16a-42de-ae4b-1afcef58f6ab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="325d0262-09a0-2fcc-d01f-bababeff6c74" executionId="924281fd-f4f3-40b0-96cd-3888cbf962f5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="27f14c65-b991-2c2a-bc6b-23b7f7d00063" executionId="444921c9-ab56-4974-bf46-113fbb29fcc6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1fc09d39-ace4-d5e0-89c8-f566c0729f60" executionId="1fa23dc4-c34e-4090-ae0c-e6f392a6740b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2a6137f2-4c1b-84e3-2f11-b354be143319" executionId="0d722798-bc8e-495b-b5f3-30551248123f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5633fcc3-5f78-3687-650e-1671cdc38c00" executionId="67c7fb37-a8c1-4a9d-95e0-f7de867775d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="89f04c0f-9959-e770-27db-b954a6eda6c7" executionId="08b9e65d-3142-4cf0-849b-583cd1d58039" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f7751fd5-687b-977e-3b7b-09da8831a381" executionId="665e5195-51b0-4156-b895-83c010138660" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="be1ac075-2b7c-dbd5-464e-d4b38c33abd0" executionId="787ea9a8-c979-4436-8732-7d42abffe4e1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="13f80414-6a6e-f235-fff2-3c1b41e7c788" executionId="e5868ff5-0c54-42db-ae8c-d63e1ea8adfb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="60beadb0-215b-071e-773c-2767df359051" executionId="0e940db3-6a9e-4101-8a8b-ef764ae099f5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b7e20dc2-1eb2-4b58-13eb-c74012ba5d70" executionId="083d08b5-ea5d-4bf9-8815-2f9ff8508724" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="12" executed="12" passed="12" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.11)
+[xUnit.net 00:00:00.04]   Discovering: Jira.Infrastructure.Tests
+[xUnit.net 00:00:00.06]   Discovered:  Jira.Infrastructure.Tests
+[xUnit.net 00:00:00.07]   Starting:    Jira.Infrastructure.Tests
+[testcontainers.org 00:00:00.06] Connected to Docker:
+  Host: unix:///var/run/docker.sock
+  Server Version: 29.9.3
+  Kernel Version: 7.0.14-linuxkit
+  API Version: 1.56
+  Operating System: Docker Desktop
+  Total Memory: 7.75 GB
+  Labels: 
+    com.docker.desktop.address=unix:///Users/rragupathi/Library/Containers/com.docker.docker/Data/docker-cli.sock
+[testcontainers.org 00:00:00.17] Docker container baaeb0bfea41 created
+[testcontainers.org 00:00:00.19] Start Docker container baaeb0bfea41
+[testcontainers.org 00:00:00.27] Wait for Docker container baaeb0bfea41 to complete readiness checks
+[testcontainers.org 00:00:01.30] Docker container baaeb0bfea41 ready
+[testcontainers.org 00:00:01.37] Docker container 94f932cc08cb created
+[testcontainers.org 00:00:01.37] Docker container 8b89fe08ea40 created
+[testcontainers.org 00:00:01.37] Start Docker container 8b89fe08ea40
+[testcontainers.org 00:00:01.37] Start Docker container 94f932cc08cb
+[testcontainers.org 00:00:01.45] Wait for Docker container 8b89fe08ea40 to complete readiness checks
+[testcontainers.org 00:00:01.46] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container 8b89fe08ea40
+[testcontainers.org 00:00:01.47] Wait for Docker container 94f932cc08cb to complete readiness checks
+[testcontainers.org 00:00:01.47] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container 94f932cc08cb
+[testcontainers.org 00:00:02.51] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container 94f932cc08cb
+[testcontainers.org 00:00:02.51] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container 8b89fe08ea40
+[testcontainers.org 00:00:02.55] Docker container 94f932cc08cb ready
+[testcontainers.org 00:00:02.55] Docker container 8b89fe08ea40 ready
+[testcontainers.org 00:00:03.26] Delete Docker container 94f932cc08cb
+[testcontainers.org 00:00:03.26] Delete Docker container 8b89fe08ea40
+[testcontainers.org 00:00:03.51] Docker container f01c05c27733 created
+[testcontainers.org 00:00:03.51] Start Docker container f01c05c27733
+[testcontainers.org 00:00:03.51] Docker container fc9b7a21144c created
+[testcontainers.org 00:00:03.52] Start Docker container fc9b7a21144c
+[testcontainers.org 00:00:03.57] Wait for Docker container f01c05c27733 to complete readiness checks
+[testcontainers.org 00:00:03.59] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container f01c05c27733
+[testcontainers.org 00:00:03.60] Wait for Docker container fc9b7a21144c to complete readiness checks
+[testcontainers.org 00:00:03.60] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container fc9b7a21144c
+[testcontainers.org 00:00:04.63] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container f01c05c27733
+[testcontainers.org 00:00:04.64] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container fc9b7a21144c
+[testcontainers.org 00:00:04.68] Docker container f01c05c27733 ready
+[testcontainers.org 00:00:04.68] Docker container fc9b7a21144c ready
+[testcontainers.org 00:00:04.76] Delete Docker container f01c05c27733
+[testcontainers.org 00:00:04.80] Delete Docker container fc9b7a21144c
+[testcontainers.org 00:00:04.97] Docker container 175ca423da4d created
+[testcontainers.org 00:00:04.97] Start Docker container 175ca423da4d
+[testcontainers.org 00:00:05.00] Docker container fe2dbb40f6a5 created
+[testcontainers.org 00:00:05.00] Start Docker container fe2dbb40f6a5
+[testcontainers.org 00:00:05.04] Wait for Docker container 175ca423da4d to complete readiness checks
+[testcontainers.org 00:00:05.05] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container 175ca423da4d
+[testcontainers.org 00:00:05.08] Wait for Docker container fe2dbb40f6a5 to complete readiness checks
+[testcontainers.org 00:00:05.09] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container fe2dbb40f6a5
+[testcontainers.org 00:00:06.08] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container 175ca423da4d
+[testcontainers.org 00:00:06.11] Docker container 175ca423da4d ready
+[testcontainers.org 00:00:06.12] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container fe2dbb40f6a5
+[testcontainers.org 00:00:06.15] Docker container fe2dbb40f6a5 ready
+[testcontainers.org 00:00:06.18] Delete Docker container 175ca423da4d
+[testcontainers.org 00:00:06.22] Delete Docker container fe2dbb40f6a5
+[testcontainers.org 00:00:06.39] Docker container 5b2bc5004a30 created
+[testcontainers.org 00:00:06.40] Start Docker container 5b2bc5004a30
+[testcontainers.org 00:00:06.41] Docker container 984652b2ba85 created
+[testcontainers.org 00:00:06.41] Start Docker container 984652b2ba85
+[testcontainers.org 00:00:06.48] Wait for Docker container 5b2bc5004a30 to complete readiness checks
+[testcontainers.org 00:00:06.49] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container 5b2bc5004a30
+[testcontainers.org 00:00:06.50] Wait for Docker container 984652b2ba85 to complete readiness checks
+[testcontainers.org 00:00:06.50] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container 984652b2ba85
+[testcontainers.org 00:00:07.55] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container 5b2bc5004a30
+[testcontainers.org 00:00:07.55] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container 984652b2ba85
+[testcontainers.org 00:00:07.60] Docker container 5b2bc5004a30 ready
+[testcontainers.org 00:00:07.60] Docker container 984652b2ba85 ready
+[testcontainers.org 00:00:07.65] Delete Docker container 5b2bc5004a30
+[testcontainers.org 00:00:07.65] Delete Docker container 984652b2ba85
+[testcontainers.org 00:00:07.89] Docker container c7d399750d4d created
+[testcontainers.org 00:00:07.89] Start Docker container c7d399750d4d
+[testcontainers.org 00:00:07.91] Docker container 16f00a09c409 created
+[testcontainers.org 00:00:07.92] Start Docker container 16f00a09c409
+[testcontainers.org 00:00:07.96] Wait for Docker container c7d399750d4d to complete readiness checks
+[testcontainers.org 00:00:07.97] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container c7d399750d4d
+[testcontainers.org 00:00:07.99] Wait for Docker container 16f00a09c409 to complete readiness checks
+[testcontainers.org 00:00:07.99] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container 16f00a09c409
+[testcontainers.org 00:00:09.01] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container c7d399750d4d
+[testcontainers.org 00:00:09.03] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container 16f00a09c409
+[testcontainers.org 00:00:09.04] Docker container c7d399750d4d ready
+[testcontainers.org 00:00:09.06] Docker container 16f00a09c409 ready
+[testcontainers.org 00:00:09.10] Delete Docker container c7d399750d4d
+[testcontainers.org 00:00:09.12] Delete Docker container 16f00a09c409
+[testcontainers.org 00:00:09.32] Docker container 460db727ce1f created
+[testcontainers.org 00:00:09.33] Start Docker container 460db727ce1f
+[testcontainers.org 00:00:09.40] Wait for Docker container 460db727ce1f to complete readiness checks
+[testcontainers.org 00:00:09.40] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container 460db727ce1f
+[testcontainers.org 00:00:10.43] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container 460db727ce1f
+[testcontainers.org 00:00:10.46] Docker container 460db727ce1f ready
+[testcontainers.org 00:00:10.52] Delete Docker container 460db727ce1f
+[testcontainers.org 00:00:10.74] Docker container 6b769d19edc9 created
+[testcontainers.org 00:00:10.75] Start Docker container 6b769d19edc9
+[testcontainers.org 00:00:10.83] Wait for Docker container 6b769d19edc9 to complete readiness checks
+[testcontainers.org 00:00:10.84] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container 6b769d19edc9
+[testcontainers.org 00:00:11.87] Execute "pg_isready --host localhost --dbname jira_test --username postgres" at Docker container 6b769d19edc9
+[testcontainers.org 00:00:11.90] Docker container 6b769d19edc9 ready
+[testcontainers.org 00:00:11.96] Delete Docker container 6b769d19edc9
+[xUnit.net 00:00:12.26]   Finished:    Jira.Infrastructure.Tests
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

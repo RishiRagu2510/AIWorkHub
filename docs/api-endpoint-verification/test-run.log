@@ -1,0 +1,87 @@
+  Jira.Domain -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/Jira.Domain/bin/Debug/net10.0/Jira.Domain.dll
+  Jira.Contracts -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/Jira.Contracts/bin/Debug/net10.0/Jira.Contracts.dll
+  Messaging.Contracts -> /Users/rragupathi/Desktop/AIWorkHub/backend/building-blocks/Messaging/Contracts/bin/Debug/net10.0/Messaging.Contracts.dll
+  Jira.Application -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/Jira.Application/bin/Debug/net10.0/Jira.Application.dll
+  Jira.Application.Tests -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/tests/Jira.Application.Tests/bin/Debug/net10.0/Jira.Application.Tests.dll
+Test run for /Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/tests/Jira.Application.Tests/bin/Debug/net10.0/Jira.Application.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: /private/tmp/aiworkhub-endpoint-audit/endpoint-audit_net10.0_20261125121419.trx
+
+Passed!  - Failed:     0, Passed:     4, Skipped:     0, Total:     4, Duration: 7 ms - Jira.Application.Tests.dll (net10.0)
+  TenantContext -> /Users/rragupathi/Desktop/AIWorkHub/backend/building-blocks/TenantContext/bin/Debug/net10.0/TenantContext.dll
+  Kafka -> /Users/rragupathi/Desktop/AIWorkHub/backend/building-blocks/Messaging/Kafka/bin/Debug/net10.0/Kafka.dll
+  Jira.Infrastructure -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/Jira.Infrastructure/bin/Debug/net10.0/Jira.Infrastructure.dll
+  Jira.Infrastructure.Tests -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/tests/Jira.Infrastructure.Tests/bin/Debug/net10.0/Jira.Infrastructure.Tests.dll
+Test run for /Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/tests/Jira.Infrastructure.Tests/bin/Debug/net10.0/Jira.Infrastructure.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: /private/tmp/aiworkhub-endpoint-audit/endpoint-audit_net10.0_20261125121432.trx
+
+Passed!  - Failed:     0, Passed:    12, Skipped:     0, Total:    12, Duration: 12 s - Jira.Infrastructure.Tests.dll (net10.0)
+  Audit.Domain -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Audit/Audit.Domain/bin/Debug/net10.0/Audit.Domain.dll
+  Audit.Contracts -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Audit/Audit.Contracts/bin/Debug/net10.0/Audit.Contracts.dll
+  Audit.Application -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Audit/Audit.Application/bin/Debug/net10.0/Audit.Application.dll
+  Audit.Infrastructure -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Audit/Audit.Infrastructure/bin/Debug/net10.0/Audit.Infrastructure.dll
+  Audit.Infrastructure.Tests -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Audit/tests/Audit.Infrastructure.Tests/bin/Debug/net10.0/Audit.Infrastructure.Tests.dll
+Test run for /Users/rragupathi/Desktop/AIWorkHub/backend/services/Audit/tests/Audit.Infrastructure.Tests/bin/Debug/net10.0/Audit.Infrastructure.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: /private/tmp/aiworkhub-endpoint-audit/endpoint-audit_net10.0_20261125121436.trx
+
+Passed!  - Failed:     0, Passed:     6, Skipped:     0, Total:     6, Duration: 3 s - Audit.Infrastructure.Tests.dll (net10.0)
+  Authentication -> /Users/rragupathi/Desktop/AIWorkHub/backend/building-blocks/Authentication/bin/Debug/net10.0/Authentication.dll
+  Authorization -> /Users/rragupathi/Desktop/AIWorkHub/backend/building-blocks/Authorization/bin/Debug/net10.0/Authorization.dll
+  Audit.Api -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Audit/Audit.Api/bin/Debug/net10.0/Audit.Api.dll
+  Audit.Api.Tests -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Audit/tests/Audit.Api.Tests/bin/Debug/net10.0/Audit.Api.Tests.dll
+Test run for /Users/rragupathi/Desktop/AIWorkHub/backend/services/Audit/tests/Audit.Api.Tests/bin/Debug/net10.0/Audit.Api.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: /private/tmp/aiworkhub-endpoint-audit/endpoint-audit_net10.0_20261125121437.trx
+
+Passed!  - Failed:     0, Passed:     3, Skipped:     0, Total:     3, Duration: 10 ms - Audit.Api.Tests.dll (net10.0)
+  ApiGateway -> /Users/rragupathi/Desktop/AIWorkHub/backend/gateway/ApiGateway/bin/Debug/net10.0/ApiGateway.dll
+  ApiGateway.Tests -> /Users/rragupathi/Desktop/AIWorkHub/backend/gateway/ApiGateway.Tests/bin/Debug/net10.0/ApiGateway.Tests.dll
+Test run for /Users/rragupathi/Desktop/AIWorkHub/backend/gateway/ApiGateway.Tests/bin/Debug/net10.0/ApiGateway.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: /private/tmp/aiworkhub-endpoint-audit/endpoint-audit_net10.0_20261125121439.trx
+
+Passed!  - Failed:     0, Passed:    22, Skipped:     0, Total:    22, Duration: 2 s - ApiGateway.Tests.dll (net10.0)
+  IdentityTenant.Domain -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/IdentityTenant/IdentityTenant.Domain/bin/Debug/net10.0/IdentityTenant.Domain.dll
+  IdentityTenant.Contracts -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/IdentityTenant/IdentityTenant.Contracts/bin/Debug/net10.0/IdentityTenant.Contracts.dll
+  IdentityTenant.Application -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/IdentityTenant/IdentityTenant.Application/bin/Debug/net10.0/IdentityTenant.Application.dll
+  IdentityTenant.Infrastructure -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/IdentityTenant/IdentityTenant.Infrastructure/bin/Debug/net10.0/IdentityTenant.Infrastructure.dll
+  IdentityTenant.Infrastructure.Tests -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/IdentityTenant/tests/IdentityTenant.Infrastructure.Tests/bin/Debug/net10.0/IdentityTenant.Infrastructure.Tests.dll
+Test run for /Users/rragupathi/Desktop/AIWorkHub/backend/services/IdentityTenant/tests/IdentityTenant.Infrastructure.Tests/bin/Debug/net10.0/IdentityTenant.Infrastructure.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: /private/tmp/aiworkhub-endpoint-audit/endpoint-audit_net10.0_20261125121444.trx
+
+Passed!  - Failed:     0, Passed:    23, Skipped:     0, Total:    23, Duration: 557 ms - IdentityTenant.Infrastructure.Tests.dll (net10.0)
+  AIAgent.Domain -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/AIAgent/AIAgent.Domain/bin/Debug/net10.0/AIAgent.Domain.dll
+  AIAgent.Contracts -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/AIAgent/AIAgent.Contracts/bin/Debug/net10.0/AIAgent.Contracts.dll
+  AIAgent.Application -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/AIAgent/AIAgent.Application/bin/Debug/net10.0/AIAgent.Application.dll
+  Logging -> /Users/rragupathi/Desktop/AIWorkHub/backend/building-blocks/Logging/bin/Debug/net10.0/Logging.dll
+  AIAgent.Infrastructure -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/AIAgent/AIAgent.Infrastructure/bin/Debug/net10.0/AIAgent.Infrastructure.dll
+  Exceptions -> /Users/rragupathi/Desktop/AIWorkHub/backend/building-blocks/Exceptions/bin/Debug/net10.0/Exceptions.dll
+  AIAgent.Api -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/AIAgent/AIAgent.Api/bin/Debug/net10.0/AIAgent.Api.dll
+  AIAgent.Application.Tests -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/AIAgent/tests/AIAgent.Application.Tests/bin/Debug/net10.0/AIAgent.Application.Tests.dll
+Test run for /Users/rragupathi/Desktop/AIWorkHub/backend/services/AIAgent/tests/AIAgent.Application.Tests/bin/Debug/net10.0/AIAgent.Application.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: /private/tmp/aiworkhub-endpoint-audit/endpoint-audit_net10.0_20261125121456.trx
+
+Passed!  - Failed:     0, Passed:  1130, Skipped:     0, Total:  1130, Duration: 11 s - AIAgent.Application.Tests.dll (net10.0)
+  IdentityTenant.Application.Tests -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/IdentityTenant/tests/IdentityTenant.Application.Tests/bin/Debug/net10.0/IdentityTenant.Application.Tests.dll
+Test run for /Users/rragupathi/Desktop/AIWorkHub/backend/services/IdentityTenant/tests/IdentityTenant.Application.Tests/bin/Debug/net10.0/IdentityTenant.Application.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: /private/tmp/aiworkhub-endpoint-audit/endpoint-audit_net10.0_20261125121457.trx
+
+Passed!  - Failed:     0, Passed:    18, Skipped:     0, Total:    18, Duration: 27 ms - IdentityTenant.Application.Tests.dll (net10.0)
+  Jira.Api -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Jira/Jira.Api/bin/Debug/net10.0/Jira.Api.dll
+  IdentityTenant.Api -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/IdentityTenant/IdentityTenant.Api/bin/Debug/net10.0/IdentityTenant.Api.dll
+  Persona.Domain -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Persona/Persona.Domain/bin/Debug/net10.0/Persona.Domain.dll
+  Persona.Contracts -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Persona/Persona.Contracts/bin/Debug/net10.0/Persona.Contracts.dll
+  Persona.Application -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Persona/Persona.Application/bin/Debug/net10.0/Persona.Application.dll
+  Persona.Infrastructure -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Persona/Persona.Infrastructure/bin/Debug/net10.0/Persona.Infrastructure.dll
+  Persona.Api -> /Users/rragupathi/Desktop/AIWorkHub/backend/services/Persona/Persona.Api/bin/Debug/net10.0/Persona.Api.dll
+  Backend.Authorization.Tests -> /Users/rragupathi/Desktop/AIWorkHub/backend/tests/Backend.Authorization.Tests/bin/Debug/net10.0/Backend.Authorization.Tests.dll
+Test run for /Users/rragupathi/Desktop/AIWorkHub/backend/tests/Backend.Authorization.Tests/bin/Debug/net10.0/Backend.Authorization.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: /private/tmp/aiworkhub-endpoint-audit/endpoint-audit_net10.0_20261125121520.trx
+
+Passed!  - Failed:     0, Passed:   713, Skipped:     0, Total:   713, Duration: 21 s - Backend.Authorization.Tests.dll (net10.0)

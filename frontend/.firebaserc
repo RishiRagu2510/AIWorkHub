@@ -1,0 +1,24 @@
+{
+  "projects": {
+    "default": "gridhub-85fe8"
+  },
+  "targets": {
+    "gridhub-85fe8": {
+      "hosting": {
+        "hub": [
+          "hub-85fe8"
+        ],
+        "chronos": [
+          "chronos-85fe8"
+        ],
+        "persona": [
+          "persona-85fe8"
+        ],
+        "landing": [
+          "landing-85fe8"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
